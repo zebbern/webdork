@@ -133,5 +133,120 @@
     "label": "Email Addresses",
     "query": "site:{input} intext:@{input}",
     "description": "Find email addresses"
+  },
+  {
+    "label": "WordPress Plugins",
+    "query": "site:{input} inurl:wp-content/plugins",
+    "description": "WordPress plugins"
+  },
+  {
+    "label": "WordPress Themes",
+    "query": "site:{input} inurl:wp-content/themes",
+    "description": "WordPress themes"
+  },
+  {
+    "label": "WordPress Uploads",
+    "query": "site:{input} inurl:wp-content/uploads",
+    "description": "WordPress media uploads"
+  },
+  {
+    "label": "PHP Files",
+    "query": "site:{input} ext:php",
+    "description": "PHP source files"
+  },
+  {
+    "label": "ASP/ASPX Files",
+    "query": "site:{input} (ext:asp OR ext:aspx)",
+    "description": "ASP.NET files"
+  },
+  {
+    "label": "JSP Files",
+    "query": "site:{input} ext:jsp",
+    "description": "Java Server Pages"
+  },
+  {
+    "label": "CGI Scripts",
+    "query": "site:{input} ext:cgi",
+    "description": "CGI scripts"
+  },
+  {
+    "label": "Perl Scripts",
+    "query": "site:{input} ext:pl",
+    "description": "Perl scripts"
+  },
+  {
+    "label": "Python Scripts",
+    "query": "site:{input} ext:py",
+    "description": "Python files"
+  },
+  {
+    "label": "Ruby Scripts",
+    "query": "site:{input} ext:rb",
+    "description": "Ruby files"
+  },
+  {
+    "label": "JavaScript Files",
+    "query": "site:{input} ext:js -jquery -angular",
+    "description": "Custom JavaScript"
+  },
+  {
+    "label": "TypeScript Files",
+    "query": "site:{input} ext:ts",
+    "description": "TypeScript files"
+  },
+  {
+    "label": "API Documentation",
+    "query": "site:{input} (inurl:api OR inurl:swagger OR inurl:openapi)",
+    "description": "API docs and specs"
+  },
+  {
+    "label": "GraphQL Endpoints",
+    "query": "site:{input} inurl:graphql",
+    "description": "GraphQL APIs"
+  },
+  {
+    "label": "REST APIs",
+    "query": "site:{input} (inurl:/api/v1 OR inurl:/api/v2 OR inurl:/rest)",
+    "description": "REST API endpoints"
+  },
+  {
+    "label": "SOAP Services",
+    "query": "site:{input} ext:wsdl",
+    "description": "SOAP web services"
+  },
+  {
+    "label": "RSS Feeds",
+    "query": "site:{input} (ext:rss OR ext:atom OR inurl:feed)",
+    "description": "RSS/Atom feeds"
+  },
+  {
+    "label": "Webhook URLs",
+    "query": "site:{input} inurl:webhook",
+    "description": "Webhook endpoints"
+  },
+  {
+    "label": "Callback URLs",
+    "query": "site:{input} inurl:callback",
+    "description": "Callback endpoints"
+  },
+  {
+    "label": "Health Check",
+    "query": "site:{input} (inurl:health OR inurl:status OR inurl:ping)",
+    "description": "Health check endpoints"
+  },
+  {
+    "label": "Metrics/Stats",
+    "query": "site:{input} (inurl:metrics OR inurl:stats OR inurl:statistics)",
+    "description": "Metrics pages"
+  },
+  {
+    "label": "Search Pages",
+    "query": "site:{input} (inurl:search OR inurl:find)",
+    "description": "Search functionality"
+  },
+  {
+    "label": "Download Pages",
+    "query": "site:{input} inurl:download",
+    "description": "Download sections"
   }
 ]

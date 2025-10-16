@@ -133,5 +133,125 @@
     "label": "Admin Interface",
     "query": "site:{input} intitle:\"admin interface\" inurl:\"/login\"",
     "description": "Admin login interface"
+  },
+  {
+    "label": "Joomla Admin",
+    "query": "site:{input} inurl:\"/administrator\" intitle:\"Joomla\"",
+    "description": "Joomla CMS admin"
+  },
+  {
+    "label": "Drupal Admin",
+    "query": "site:{input} inurl:\"/user/login\" intitle:\"Drupal\"",
+    "description": "Drupal CMS login"
+  },
+  {
+    "label": "Magento Admin",
+    "query": "site:{input} inurl:\"/admin\" intitle:\"Magento\"",
+    "description": "Magento e-commerce admin"
+  },
+  {
+    "label": "Shopify Admin",
+    "query": "site:{input} inurl:\"/admin\" intitle:\"Shopify\"",
+    "description": "Shopify store admin"
+  },
+  {
+    "label": "osCommerce Admin",
+    "query": "site:{input} inurl:\"/admin\" intitle:\"osCommerce\"",
+    "description": "osCommerce admin panel"
+  },
+  {
+    "label": "OpenCart Admin",
+    "query": "site:{input} inurl:\"/admin\" intitle:\"OpenCart\"",
+    "description": "OpenCart admin"
+  },
+  {
+    "label": "PrestaShop Admin",
+    "query": "site:{input} inurl:\"/admin\" intitle:\"PrestaShop\"",
+    "description": "PrestaShop backend"
+  },
+  {
+    "label": "Admin File Manager",
+    "query": "site:{input} inurl:\"/filemanager\" intitle:\"admin\"",
+    "description": "Admin file managers"
+  },
+  {
+    "label": "CPanel Login",
+    "query": "site:{input} inurl:\":2082\" OR inurl:\":2083\"",
+    "description": "cPanel access"
+  },
+  {
+    "label": "Plesk Panel",
+    "query": "site:{input} inurl:\":8443\" intitle:\"Plesk\"",
+    "description": "Plesk control panel"
+  },
+  {
+    "label": "DirectAdmin",
+    "query": "site:{input} inurl:\":2222\" intitle:\"DirectAdmin\"",
+    "description": "DirectAdmin panel"
+  },
+  {
+    "label": "Webmin",
+    "query": "site:{input} inurl:\":10000\" intitle:\"Webmin\"",
+    "description": "Webmin interface"
+  },
+  {
+    "label": "Admin SQL",
+    "query": "site:{input} inurl:\"/admin/sql\"",
+    "description": "Admin SQL interfaces"
+  },
+  {
+    "label": "Admin Backup",
+    "query": "site:{input} inurl:\"/admin/backup\"",
+    "description": "Admin backup pages"
+  },
+  {
+    "label": "Admin Users",
+    "query": "site:{input} inurl:\"/admin/users\"",
+    "description": "Admin user management"
+  },
+  {
+    "label": "Admin Reports",
+    "query": "site:{input} inurl:\"/admin/reports\"",
+    "description": "Admin reporting"
+  },
+  {
+    "label": "Admin Logs",
+    "query": "site:{input} inurl:\"/admin/logs\"",
+    "description": "Admin log viewing"
+  },
+  {
+    "label": "Admin API",
+    "query": "site:{input} inurl:\"/admin/api\"",
+    "description": "Admin API endpoints"
+  },
+  {
+    "label": "Admin Debug",
+    "query": "site:{input} inurl:\"/admin/debug\"",
+    "description": "Admin debug mode"
+  },
+  {
+    "label": "Admin Test",
+    "query": "site:{input} inurl:\"/admin/test\"",
+    "description": "Admin test pages"
+  },
+  {
+    "label": "Admin Install",
+    "query": "site:{input} inurl:\"/admin/install\"",
+    "description": "Admin installation"
+  },
+  {
+    "label": "Admin Setup",
+    "query": "site:{input} inurl:\"/admin/setup\"",
+    "description": "Admin setup wizard"
+  },
+  {
+    "label": "Admin Account",
+    "query": "site:{input} inurl:\"/admin/account\"",
+    "description": "Admin account pages"
+  },
+  {
+    "label": "Admin Profile",
+    "query": "site:{input} inurl:\"/admin/profile\"",
+    "description": "Admin profile settings"
   }
 ]

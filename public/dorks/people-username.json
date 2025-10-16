@@ -5,73 +5,253 @@
     "description": "Simple exact search"
   },
   {
-    "label": "All Sites Wildcard",
+    "label": "Wildcard All Sites",
     "query": "site:*.* {input}",
-    "description": "Search across all websites"
+    "description": "Search all domains"
   },
   {
-    "label": "LinkedIn Profile Direct",
+    "label": "LinkedIn Profile",
     "query": "site:linkedin.com/in/ \"{input}\"",
-    "description": "Find LinkedIn profile page"
+    "description": "LinkedIn profile page"
   },
   {
-    "label": "LinkedIn All",
+    "label": "LinkedIn All Pages",
     "query": "site:linkedin.com {input}",
-    "description": "Search all LinkedIn pages"
+    "description": "All LinkedIn results"
+  },
+  {
+    "label": "LinkedIn Posts",
+    "query": "site:linkedin.com/posts {input}",
+    "description": "LinkedIn activity"
   },
   {
     "label": "Instagram Profile",
     "query": "site:instagram.com \"{input}\" -inurl:user",
-    "description": "Locate Instagram account"
+    "description": "Instagram account"
   },
   {
-    "label": "Facebook Search",
+    "label": "Instagram Photos",
+    "query": "site:instagram.com/p {input}",
+    "description": "Instagram posts"
+  },
+  {
+    "label": "Facebook Profile",
     "query": "site:facebook.com {input}",
-    "description": "Find Facebook profile"
+    "description": "Facebook page"
   },
   {
-    "label": "Twitter/X Search",
+    "label": "Facebook Photos",
+    "query": "site:facebook.com/photo {input}",
+    "description": "Facebook images"
+  },
+  {
+    "label": "Twitter/X Profile",
     "query": "site:twitter.com {input}",
-    "description": "Search Twitter profile"
+    "description": "Twitter account"
+  },
+  {
+    "label": "Twitter Tweets",
+    "query": "site:twitter.com/status {input}",
+    "description": "Tweet history"
   },
   {
     "label": "GitHub Profile",
     "query": "site:github.com {input}",
-    "description": "Find GitHub repositories"
+    "description": "GitHub account"
   },
   {
-    "label": "Reddit Activity",
+    "label": "GitHub Repos",
+    "query": "site:github.com/{input}",
+    "description": "GitHub projects"
+  },
+  {
+    "label": "GitHub Commits",
+    "query": "site:github.com author:{input}",
+    "description": "Code contributions"
+  },
+  {
+    "label": "Reddit User",
+    "query": "site:reddit.com/user/{input}",
+    "description": "Reddit profile"
+  },
+  {
+    "label": "Reddit Posts",
     "query": "site:reddit.com {input}",
-    "description": "Search Reddit posts"
+    "description": "Reddit activity"
+  },
+  {
+    "label": "Stack Overflow",
+    "query": "site:stackoverflow.com/users {input}",
+    "description": "Stack Overflow profile"
+  },
+  {
+    "label": "Stack Overflow Posts",
+    "query": "site:stackoverflow.com {input}",
+    "description": "SO contributions"
+  },
+  {
+    "label": "YouTube Channel",
+    "query": "site:youtube.com/c/{input}",
+    "description": "YouTube channel"
+  },
+  {
+    "label": "YouTube Videos",
+    "query": "site:youtube.com {input}",
+    "description": "Video content"
+  },
+  {
+    "label": "TikTok Profile",
+    "query": "site:tiktok.com/@{input}",
+    "description": "TikTok account"
+  },
+  {
+    "label": "Medium Articles",
+    "query": "site:medium.com/@{input}",
+    "description": "Medium blog"
+  },
+  {
+    "label": "Medium Posts",
+    "query": "site:medium.com {input}",
+    "description": "Medium articles"
+  },
+  {
+    "label": "Dev.to Profile",
+    "query": "site:dev.to {input}",
+    "description": "Dev.to account"
+  },
+  {
+    "label": "Behance Profile",
+    "query": "site:behance.net {input}",
+    "description": "Behance portfolio"
+  },
+  {
+    "label": "Dribbble Profile",
+    "query": "site:dribbble.com {input}",
+    "description": "Dribbble designs"
+  },
+  {
+    "label": "Pinterest Profile",
+    "query": "site:pinterest.com/{input}",
+    "description": "Pinterest boards"
+  },
+  {
+    "label": "Tumblr Blog",
+    "query": "site:tumblr.com {input}",
+    "description": "Tumblr blog"
+  },
+  {
+    "label": "Quora Profile",
+    "query": "site:quora.com/profile/{input}",
+    "description": "Quora account"
+  },
+  {
+    "label": "Quora Answers",
+    "query": "site:quora.com {input}",
+    "description": "Quora responses"
+  },
+  {
+    "label": "Telegram",
+    "query": "site:t.me {input}",
+    "description": "Telegram username"
+  },
+  {
+    "label": "Discord",
+    "query": "site:discord.com {input}",
+    "description": "Discord servers"
+  },
+  {
+    "label": "Twitch Profile",
+    "query": "site:twitch.tv/{input}",
+    "description": "Twitch channel"
+  },
+  {
+    "label": "SoundCloud",
+    "query": "site:soundcloud.com/{input}",
+    "description": "SoundCloud music"
+  },
+  {
+    "label": "Spotify",
+    "query": "site:open.spotify.com {input}",
+    "description": "Spotify profile"
+  },
+  {
+    "label": "Vimeo",
+    "query": "site:vimeo.com/{input}",
+    "description": "Vimeo videos"
+  },
+  {
+    "label": "Flickr",
+    "query": "site:flickr.com/photos/{input}",
+    "description": "Flickr photos"
   },
   {
     "label": "Contact Info",
     "query": "\"{input}\" (phone|contact|mobile|cell)",
-    "description": "Find contact details"
+    "description": "Phone numbers"
   },
   {
-    "label": "Email Addresses",
+    "label": "Email Address",
     "query": "\"{input}\" email OR @",
-    "description": "Search for emails"
+    "description": "Email addresses"
   },
   {
-    "label": "In URL Search",
+    "label": "Address Info",
+    "query": "\"{input}\" (address|location|city|state)",
+    "description": "Physical address"
+  },
+  {
+    "label": "Resume PDF",
+    "query": "\"{input}\" filetype:pdf resume",
+    "description": "Resume documents"
+  },
+  {
+    "label": "CV Documents",
+    "query": "\"{input}\" filetype:pdf cv",
+    "description": "CV files"
+  },
+  {
+    "label": "Portfolio PDF",
+    "query": "\"{input}\" filetype:pdf portfolio",
+    "description": "Portfolio docs"
+  },
+  {
+    "label": "Biography",
+    "query": "\"{input}\" (bio|biography|about)",
+    "description": "Bio information"
+  },
+  {
+    "label": "Professional Info",
+    "query": "\"{input}\" (work|job|career|position)",
+    "description": "Work history"
+  },
+  {
+    "label": "Education",
+    "query": "\"{input}\" (education|university|college|school)",
+    "description": "Educational background"
+  },
+  {
+    "label": "In URL",
     "query": "inurl:{input}",
-    "description": "Name in URL"
+    "description": "Username in URL"
   },
   {
-    "label": "In Text Search",
+    "label": "In Text",
     "query": "intext:\"{input}\"",
-    "description": "Name in page text"
+    "description": "Name in text"
   },
   {
-    "label": "Related Profiles",
+    "label": "In Title",
+    "query": "intitle:\"{input}\"",
+    "description": "Name in title"
+  },
+  {
+    "label": "Related Sites",
     "query": "related:\"{input}\"",
-    "description": "Find related sites"
+    "description": "Similar profiles"
   },
   {
-    "label": "Resume/CV",
-    "query": "\"{input}\" filetype:pdf resume OR cv",
-    "description": "Find professional docs"
+    "label": "News Articles",
+    "query": "\"{input}\" site:news.google.com",
+    "description": "News mentions"
   }
 ]

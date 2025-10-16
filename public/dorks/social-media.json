@@ -1,102 +1,257 @@
 [
   {
-    "label": "@Facebook",
-    "query": "@Facebook {input}",
-    "description": "Facebook mentions"
-  },
-  {
-    "label": "@Instagram",
-    "query": "@Instagram {input}",
-    "description": "Instagram mentions"
-  },
-  {
-    "label": "@Twitter",
-    "query": "@Twitter {input}",
-    "description": "Twitter mentions"
-  },
-  {
-    "label": "@LinkedIn",
-    "query": "@LinkedIn {input}",
-    "description": "LinkedIn mentions"
-  },
-  {
-    "label": "@TikTok",
-    "query": "@TikTok {input}",
-    "description": "TikTok mentions"
-  },
-  {
-    "label": "@Snapchat",
-    "query": "@Snapchat {input}",
-    "description": "Snapchat mentions"
-  },
-  {
-    "label": "@Pinterest",
-    "query": "@Pinterest {input}",
-    "description": "Pinterest mentions"
-  },
-  {
-    "label": "@YouTube",
-    "query": "@YouTube {input}",
-    "description": "YouTube mentions"
-  },
-  {
-    "label": "@Reddit",
-    "query": "@Reddit {input}",
-    "description": "Reddit mentions"
-  },
-  {
-    "label": "@Telegram",
-    "query": "@Telegram {input}",
-    "description": "Telegram mentions"
-  },
-  {
-    "label": "@GitHub",
-    "query": "@GitHub {input}",
-    "description": "GitHub mentions"
-  },
-  {
-    "label": "@Discord",
-    "query": "@Discord {input}",
-    "description": "Discord mentions"
-  },
-  {
-    "label": "@Twitch",
-    "query": "@Twitch {input}",
-    "description": "Twitch mentions"
-  },
-  {
-    "label": "@Medium",
-    "query": "@Medium {input}",
-    "description": "Medium mentions"
-  },
-  {
-    "label": "@Quora",
-    "query": "@Quora {input}",
-    "description": "Quora mentions"
-  },
-  {
-    "label": "LinkedIn Site",
-    "query": "site:linkedin.com {input}",
-    "description": "LinkedIn profiles"
-  },
-  {
-    "label": "Instagram Site",
-    "query": "site:instagram.com \"{input}\" -inurl:user",
-    "description": "Instagram profiles"
-  },
-  {
-    "label": "Facebook Site",
+    "label": "Facebook Profile",
     "query": "site:facebook.com {input}",
-    "description": "Facebook profiles"
+    "description": "Facebook account"
   },
   {
-    "label": "Twitter Site",
+    "label": "Facebook Photos",
+    "query": "site:facebook.com/photo {input}",
+    "description": "Facebook images"
+  },
+  {
+    "label": "Facebook Videos",
+    "query": "site:facebook.com/video {input}",
+    "description": "Facebook videos"
+  },
+  {
+    "label": "Facebook Groups",
+    "query": "site:facebook.com/groups {input}",
+    "description": "Facebook groups"
+  },
+  {
+    "label": "Instagram Profile",
+    "query": "site:instagram.com \"{input}\" -inurl:user",
+    "description": "Instagram account"
+  },
+  {
+    "label": "Instagram Posts",
+    "query": "site:instagram.com/p {input}",
+    "description": "Instagram content"
+  },
+  {
+    "label": "Instagram Tagged",
+    "query": "site:instagram.com/explore/tags/{input}",
+    "description": "Instagram hashtags"
+  },
+  {
+    "label": "Twitter Profile",
     "query": "site:twitter.com {input}",
-    "description": "Twitter profiles"
+    "description": "Twitter account"
   },
   {
-    "label": "All Major Platforms",
-    "query": "{input} site:linkedin.com OR site:twitter.com OR site:facebook.com OR site:instagram.com",
-    "description": "Search across all major social platforms"
+    "label": "Twitter Search",
+    "query": "site:twitter.com/search {input}",
+    "description": "Twitter search results"
+  },
+  {
+    "label": "Twitter Lists",
+    "query": "site:twitter.com/i/lists {input}",
+    "description": "Twitter lists"
+  },
+  {
+    "label": "Twitter Moments",
+    "query": "site:twitter.com/i/moments {input}",
+    "description": "Twitter moments"
+  },
+  {
+    "label": "LinkedIn Profile",
+    "query": "site:linkedin.com/in {input}",
+    "description": "LinkedIn account"
+  },
+  {
+    "label": "LinkedIn Company",
+    "query": "site:linkedin.com/company {input}",
+    "description": "LinkedIn companies"
+  },
+  {
+    "label": "LinkedIn Jobs",
+    "query": "site:linkedin.com/jobs {input}",
+    "description": "LinkedIn job posts"
+  },
+  {
+    "label": "LinkedIn Posts",
+    "query": "site:linkedin.com/posts {input}",
+    "description": "LinkedIn activity"
+  },
+  {
+    "label": "TikTok Profile",
+    "query": "site:tiktok.com/@{input}",
+    "description": "TikTok account"
+  },
+  {
+    "label": "TikTok Videos",
+    "query": "site:tiktok.com {input}",
+    "description": "TikTok content"
+  },
+  {
+    "label": "TikTok Hashtags",
+    "query": "site:tiktok.com/tag {input}",
+    "description": "TikTok trends"
+  },
+  {
+    "label": "YouTube Channel",
+    "query": "site:youtube.com/c {input}",
+    "description": "YouTube channel"
+  },
+  {
+    "label": "YouTube User",
+    "query": "site:youtube.com/user {input}",
+    "description": "YouTube account"
+  },
+  {
+    "label": "YouTube Videos",
+    "query": "site:youtube.com/watch {input}",
+    "description": "YouTube videos"
+  },
+  {
+    "label": "YouTube Playlists",
+    "query": "site:youtube.com/playlist {input}",
+    "description": "YouTube playlists"
+  },
+  {
+    "label": "Reddit User",
+    "query": "site:reddit.com/user {input}",
+    "description": "Reddit profile"
+  },
+  {
+    "label": "Reddit Posts",
+    "query": "site:reddit.com {input}",
+    "description": "Reddit content"
+  },
+  {
+    "label": "Reddit Subreddits",
+    "query": "site:reddit.com/r {input}",
+    "description": "Subreddit search"
+  },
+  {
+    "label": "Reddit Comments",
+    "query": "site:reddit.com/comments {input}",
+    "description": "Reddit discussions"
+  },
+  {
+    "label": "Pinterest Profile",
+    "query": "site:pinterest.com/{input}",
+    "description": "Pinterest account"
+  },
+  {
+    "label": "Pinterest Boards",
+    "query": "site:pinterest.com {input}",
+    "description": "Pinterest boards"
+  },
+  {
+    "label": "Pinterest Pins",
+    "query": "site:pinterest.com/pin {input}",
+    "description": "Pinterest pins"
+  },
+  {
+    "label": "Snapchat Profile",
+    "query": "site:snapchat.com/{input}",
+    "description": "Snapchat account"
+  },
+  {
+    "label": "Telegram Channel",
+    "query": "site:t.me/{input}",
+    "description": "Telegram channel"
+  },
+  {
+    "label": "Telegram Search",
+    "query": "site:t.me {input}",
+    "description": "Telegram content"
+  },
+  {
+    "label": "WhatsApp",
+    "query": "site:wa.me {input}",
+    "description": "WhatsApp links"
+  },
+  {
+    "label": "Discord Servers",
+    "query": "site:discord.com {input}",
+    "description": "Discord servers"
+  },
+  {
+    "label": "Discord Invites",
+    "query": "site:discord.gg {input}",
+    "description": "Discord invites"
+  },
+  {
+    "label": "Twitch Channel",
+    "query": "site:twitch.tv/{input}",
+    "description": "Twitch profile"
+  },
+  {
+    "label": "Twitch Videos",
+    "query": "site:twitch.tv/videos {input}",
+    "description": "Twitch VODs"
+  },
+  {
+    "label": "Twitch Clips",
+    "query": "site:twitch.tv {input} clip",
+    "description": "Twitch clips"
+  },
+  {
+    "label": "Medium Profile",
+    "query": "site:medium.com/@{input}",
+    "description": "Medium author"
+  },
+  {
+    "label": "Medium Articles",
+    "query": "site:medium.com {input}",
+    "description": "Medium posts"
+  },
+  {
+    "label": "Quora Profile",
+    "query": "site:quora.com/profile/{input}",
+    "description": "Quora account"
+  },
+  {
+    "label": "Quora Answers",
+    "query": "site:quora.com {input}",
+    "description": "Quora responses"
+  },
+  {
+    "label": "Tumblr Blog",
+    "query": "site:tumblr.com {input}",
+    "description": "Tumblr blog"
+  },
+  {
+    "label": "Tumblr Posts",
+    "query": "site:tumblr.com/post {input}",
+    "description": "Tumblr content"
+  },
+  {
+    "label": "Tumblr Tagged",
+    "query": "site:tumblr.com/tagged/{input}",
+    "description": "Tumblr tags"
+  },
+  {
+    "label": "Vimeo Profile",
+    "query": "site:vimeo.com/{input}",
+    "description": "Vimeo account"
+  },
+  {
+    "label": "Vimeo Videos",
+    "query": "site:vimeo.com {input}",
+    "description": "Vimeo content"
+  },
+  {
+    "label": "Flickr Profile",
+    "query": "site:flickr.com/photos/{input}",
+    "description": "Flickr account"
+  },
+  {
+    "label": "Flickr Photos",
+    "query": "site:flickr.com {input}",
+    "description": "Flickr images"
+  },
+  {
+    "label": "SoundCloud Profile",
+    "query": "site:soundcloud.com/{input}",
+    "description": "SoundCloud account"
+  },
+  {
+    "label": "SoundCloud Tracks",
+    "query": "site:soundcloud.com {input}",
+    "description": "SoundCloud music"
   }
 ]
