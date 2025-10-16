@@ -1,59 +1,120 @@
-# Enhanced Vite React TypeScript Template
+# WebDork
 
-This template includes built-in detection for missing CSS variables between your Tailwind config and CSS files.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?logo=vercel)
+
+A comprehensive Google Dorking assistant designed for security researchers, penetration testers, and bug bounty hunters. WebDork provides 394+ professionally curated search queries across 8 specialized categories.
 
 ## Features
 
-- **CSS Variable Detection**: Automatically detects if CSS variables referenced in `tailwind.config.cjs` are defined in `src/index.css`
-- **Enhanced Linting**: Includes ESLint, Stylelint, and custom CSS variable validation
-- **Shadcn/ui**: Pre-configured with all Shadcn components
-- **Modern Stack**: Vite + React + TypeScript + Tailwind CSS
+- **394+ Professional Dorks** - Extensively researched and tested queries
+- **8 Specialized Categories** - Organized by security testing objectives
+- **Dynamic Query Generation** - Automatic input substitution for targeted searches
+- **Modern UI** - Clean, responsive interface built with React and Tailwind CSS
+- **One-Click Search** - Direct Google search integration
+- **No Backend Required** - Pure frontend application, deploy anywhere
 
-## Available Scripts
+## Categories
+
+| Category | Dorks | Description |
+|----------|-------|-------------|
+| People & Username | 51 | OSINT queries for social media and personal information |
+| Social Media | 51 | Platform-specific searches across all major networks |
+| Websites | 50 | Domain reconnaissance and vulnerability discovery |
+| Admin Portals | 51 | CMS backends, control panels, and admin interfaces |
+| Files | 40 | Sensitive file types and exposed documents |
+| Sensitive Info | 40 | API keys, credentials, tokens, and secrets |
+| Vulnerabilities | 40 | SQLi, XSS, LFI, RFI, and security misconfigurations |
+| Company Research | 40 | Corporate intelligence and infrastructure mapping |
+
+## Installation
 
 ```bash
-# Run all linting (includes CSS variable check)
-npm run lint
+# Clone the repository
+git clone https://github.com/zebbern/webdork.git
 
-# Check only CSS variables
-npm run check:css-vars
+# Navigate to project directory
+cd webdork
 
-# Individual linting
-npm run lint:js    # ESLint
-npm run lint:css   # Stylelint
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-## CSS Variable Detection
+## Deployment
 
-The template includes a custom script that:
+### Vercel
 
-1. **Parses `tailwind.config.cjs`** to find all `var(--variable)` references
-2. **Parses `src/index.css`** to find all defined CSS variables (`--variable:`)
-3. **Cross-references** them to find missing definitions
-4. **Reports undefined variables** with clear error messages
-
-### Example Output
-
-When CSS variables are missing:
-```
-❌ Undefined CSS variables found in tailwind.config.cjs:
-   --sidebar-background
-   --sidebar-foreground
-   --sidebar-primary
-
-Add these variables to src/index.css
+```bash
+npm run build
+vercel --prod
 ```
 
-When all variables are defined:
+The application is configured for seamless Vercel deployment with automatic routing.
+
+### Other Platforms
+
+Build the static files and deploy the `dist` folder:
+
+```bash
+npm run build
 ```
-✅ All CSS variables in tailwind.config.cjs are defined
+
+## Usage
+
+1. Enter your target (website, username, or company name)
+2. Select a category from the available options
+3. Click any dork to execute the search on Google
+4. Review results and proceed with your security assessment
+
+## Technology Stack
+
+- **Frontend Framework:** React 19
+- **Type Safety:** TypeScript 5.6
+- **Build Tool:** Vite 7.1
+- **Styling:** Tailwind CSS
+- **UI Components:** Radix UI
+- **Routing:** React Router DOM
+
+## Use Cases
+
+- **Bug Bounty Hunting** - Discover vulnerabilities and exposed assets
+- **Penetration Testing** - Reconnaissance and information gathering
+- **Security Research** - Investigate attack surfaces and misconfigurations
+- **OSINT Investigations** - Collect intelligence on targets
+- **Red Team Operations** - Identify entry points and weak spots
+
+## Disclaimer
+
+This tool is intended for legal security research and testing only. Users are responsible for ensuring they have proper authorization before conducting any security assessments. The authors assume no liability for misuse or illegal activities.
+
+## License
+
+MIT License - See LICENSE file for details
+
+## Contributing
+
+Contributions are welcome. Please open an issue or submit a pull request for improvements.
+
+## Project Structure
+
+```
+webdork/
+├── public/
+│   └── dorks/           # JSON files containing dork queries
+├── src/
+│   ├── pages/           # React page components
+│   ├── lib/             # Utility functions
+│   └── main.tsx         # Application entry point
+├── vercel.json          # Vercel deployment configuration
+└── package.json         # Project dependencies
 ```
 
-## How It Works
+## Contact
 
-The detection happens during the `npm run lint` command, which will:
-- Exit with error code 1 if undefined variables are found
-- Show exactly which variables need to be added to your CSS file
-- Integrate seamlessly with your development workflow
-
-This prevents runtime CSS issues where Tailwind classes reference undefined CSS variables.
+For questions, issues, or feature requests, please open an issue on GitHub.
