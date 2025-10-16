@@ -1,72 +1,202 @@
 [
   {
-    "label": "PDF Documents",
-    "query": "site:{input} filetype:pdf",
-    "description": "Find all PDF documents"
+    "label": "All Documents",
+    "query": "site:{input} (ext:doc OR ext:docx OR ext:odt OR ext:pdf OR ext:rtf OR ext:txt)",
+    "description": "All document types"
   },
   {
-    "label": "Word Documents",
-    "query": "site:{input} filetype:doc OR filetype:docx",
-    "description": "Search for Word documents"
+    "label": "All Spreadsheets",
+    "query": "site:{input} (ext:xls OR ext:xlsx OR ext:csv OR ext:ods)",
+    "description": "All spreadsheet formats"
   },
   {
-    "label": "Excel Spreadsheets",
-    "query": "site:{input} filetype:xls OR filetype:xlsx",
-    "description": "Find Excel files"
+    "label": "All Presentations",
+    "query": "site:{input} (ext:ppt OR ext:pptx OR ext:odp)",
+    "description": "All presentation files"
   },
   {
-    "label": "PowerPoint Presentations",
-    "query": "site:{input} filetype:ppt OR filetype:pptx",
-    "description": "Locate presentation files"
+    "label": "Configuration Files",
+    "query": "site:{input} (ext:conf OR ext:config OR ext:cfg OR ext:ini OR ext:env)",
+    "description": "Config and settings files"
   },
   {
-    "label": "Text Files",
-    "query": "site:{input} filetype:txt",
-    "description": "Search for text files"
+    "label": "Database Files",
+    "query": "site:{input} (ext:sql OR ext:db OR ext:sqlite OR ext:mdb OR ext:accdb)",
+    "description": "Database dump files"
   },
   {
-    "label": "CSV Data Files",
-    "query": "site:{input} filetype:csv",
-    "description": "Find CSV data files"
+    "label": "Backup Archives",
+    "query": "site:{input} (ext:bak OR ext:backup OR ext:old OR ext:save OR ext:~)",
+    "description": "Backup file extensions"
   },
   {
-    "label": "SQL Files",
-    "query": "site:{input} filetype:sql",
-    "description": "Search for SQL database files"
+    "label": "Compressed Archives",
+    "query": "site:{input} (ext:zip OR ext:rar OR ext:tar OR ext:gz OR ext:7z OR ext:bz2)",
+    "description": "All archive formats"
   },
   {
     "label": "Log Files",
-    "query": "site:{input} filetype:log",
-    "description": "Find log files"
+    "query": "site:{input} (ext:log OR ext:logs OR ext:out)",
+    "description": "System and app logs"
   },
   {
-    "label": "Backup Files",
-    "query": "site:{input} filetype:bak OR filetype:backup OR filetype:old",
-    "description": "Locate backup files"
+    "label": "Code - Web",
+    "query": "site:{input} (ext:php OR ext:asp OR ext:aspx OR ext:jsp OR ext:js OR ext:html)",
+    "description": "Web development files"
   },
   {
-    "label": "Archive Files",
-    "query": "site:{input} filetype:zip OR filetype:rar OR filetype:tar OR filetype:gz",
-    "description": "Find compressed archive files"
+    "label": "Code - Backend",
+    "query": "site:{input} (ext:py OR ext:java OR ext:rb OR ext:go OR ext:cs OR ext:cpp)",
+    "description": "Backend source code"
   },
   {
-    "label": "Source Code",
-    "query": "site:{input} filetype:java OR filetype:py OR filetype:js OR filetype:php",
-    "description": "Search for source code files"
+    "label": "Data Formats",
+    "query": "site:{input} (ext:json OR ext:xml OR ext:yaml OR ext:yml OR ext:toml)",
+    "description": "Structured data files"
   },
   {
-    "label": "JSON Files",
-    "query": "site:{input} filetype:json",
-    "description": "Find JSON data files"
+    "label": "Shell Scripts",
+    "query": "site:{input} (ext:sh OR ext:bash OR ext:bat OR ext:cmd OR ext:ps1)",
+    "description": "Executable scripts"
   },
   {
-    "label": "XML Files",
-    "query": "site:{input} filetype:xml",
-    "description": "Search for XML files"
+    "label": "Key Files",
+    "query": "site:{input} (ext:pem OR ext:key OR ext:crt OR ext:cer OR ext:p12 OR ext:pfx)",
+    "description": "Certificates and keys"
   },
   {
-    "label": "Image Files",
-    "query": "site:{input} filetype:jpg OR filetype:png OR filetype:gif",
-    "description": "Find image files"
+    "label": "Source Control",
+    "query": "site:{input} (ext:git OR inurl:.git OR inurl:.svn OR ext:gitignore)",
+    "description": "Version control files"
+  },
+  {
+    "label": "Credentials Files",
+    "query": "site:{input} (filename:credentials OR filename:password OR filename:passwords)",
+    "description": "Files with credential names"
+  },
+  {
+    "label": "Sensitive Docs",
+    "query": "site:{input} ext:pdf (confidential OR internal OR private OR secret)",
+    "description": "Confidential PDF documents"
+  },
+  {
+    "label": "Financial Docs",
+    "query": "site:{input} (ext:xls OR ext:xlsx) (invoice OR payment OR salary OR budget)",
+    "description": "Financial spreadsheets"
+  },
+  {
+    "label": "Email Archives",
+    "query": "site:{input} (ext:pst OR ext:ost OR ext:mbox OR ext:eml OR ext:msg)",
+    "description": "Email data files"
+  },
+  {
+    "label": "Docker Files",
+    "query": "site:{input} (filename:dockerfile OR filename:docker-compose)",
+    "description": "Docker configuration"
+  },
+  {
+    "label": "CI/CD Configs",
+    "query": "site:{input} (filename:.gitlab-ci OR filename:.travis.yml OR filename:jenkinsfile)",
+    "description": "CI/CD pipeline files"
+  },
+  {
+    "label": "Package Managers",
+    "query": "site:{input} (filename:package.json OR filename:composer.json OR filename:requirements.txt OR filename:gemfile)",
+    "description": "Dependency files"
+  },
+  {
+    "label": "SSH Config",
+    "query": "site:{input} (filename:id_rsa OR filename:id_dsa OR filename:authorized_keys OR filename:known_hosts)",
+    "description": "SSH configuration files"
+  },
+  {
+    "label": "AWS Config",
+    "query": "site:{input} (filename:credentials OR filename:config) (aws OR amazon)",
+    "description": "AWS credential files"
+  },
+  {
+    "label": "API Specs",
+    "query": "site:{input} (filename:swagger OR filename:openapi OR ext:wadl OR ext:wsdl)",
+    "description": "API documentation files"
+  },
+  {
+    "label": "Temp Files",
+    "query": "site:{input} (ext:tmp OR ext:temp OR ext:swp OR ext:cache)",
+    "description": "Temporary files"
+  },
+  {
+    "label": "Memory Dumps",
+    "query": "site:{input} (ext:dmp OR ext:dump OR ext:core)",
+    "description": "Memory dump files"
+  },
+  {
+    "label": "Password Lists",
+    "query": "site:{input} ext:txt (password OR passwords OR passwd) (list OR dump)",
+    "description": "Password list files"
+  },
+  {
+    "label": "Kubernetes Configs",
+    "query": "site:{input} (ext:yaml OR ext:yml) (kubernetes OR k8s OR kubectl)",
+    "description": "Kubernetes configuration"
+  },
+  {
+    "label": "Terraform Files",
+    "query": "site:{input} (ext:tf OR ext:tfvars OR ext:tfstate)",
+    "description": "Terraform IaC files"
+  },
+  {
+    "label": "Ansible Playbooks",
+    "query": "site:{input} (ext:yaml OR ext:yml) (ansible OR playbook)",
+    "description": "Ansible automation files"
+  },
+  {
+    "label": "VPN Configs",
+    "query": "site:{input} (ext:ovpn OR ext:conf) (vpn OR openvpn)",
+    "description": "VPN configuration files"
+  },
+  {
+    "label": "Database Dumps",
+    "query": "site:{input} ext:sql (dump OR backup) (database OR db)",
+    "description": "SQL database backups"
+  },
+  {
+    "label": "PHPInfo Files",
+    "query": "site:{input} ext:php (phpinfo OR php_info)",
+    "description": "PHP info disclosure"
+  },
+  {
+    "label": "Env Files",
+    "query": "site:{input} (filename:.env OR filename:.env.local OR filename:.env.production)",
+    "description": "Environment variable files"
+  },
+  {
+    "label": "Htaccess Files",
+    "query": "site:{input} (filename:.htaccess OR filename:.htpasswd)",
+    "description": "Apache config files"
+  },
+  {
+    "label": "Nginx Configs",
+    "query": "site:{input} (filename:nginx.conf OR ext:conf) nginx",
+    "description": "Nginx configuration"
+  },
+  {
+    "label": "PHP Configs",
+    "query": "site:{input} (filename:php.ini OR filename:php.conf)",
+    "description": "PHP configuration files"
+  },
+  {
+    "label": "Web Shells",
+    "query": "site:{input} (ext:php OR ext:asp) (shell OR cmd OR c99 OR r57 OR webshell)",
+    "description": "Potential web shells"
+  },
+  {
+    "label": "Source Maps",
+    "query": "site:{input} ext:map (sourceMappingURL OR sourceMap)",
+    "description": "JavaScript source maps"
+  },
+  {
+    "label": "GraphQL Schemas",
+    "query": "site:{input} (ext:graphql OR ext:gql OR filename:schema.graphql)",
+    "description": "GraphQL schema files"
   }
 ]

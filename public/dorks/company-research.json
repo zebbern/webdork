@@ -1,52 +1,202 @@
 [
   {
-    "label": "Company Information",
+    "label": "LinkedIn Company Page",
     "query": "\"{input}\" site:linkedin.com/company",
-    "description": "Find company LinkedIn page"
+    "description": "Official company LinkedIn"
   },
   {
-    "label": "Employee Profiles",
-    "query": "\"{input}\" site:linkedin.com employees",
-    "description": "Search for company employees on LinkedIn"
+    "label": "LinkedIn Employees",
+    "query": "\"{input}\" site:linkedin.com (employees OR works at OR currently)",
+    "description": "Find company employees"
   },
   {
-    "label": "Press Releases",
-    "query": "\"{input}\" \"press release\" OR \"news\"",
-    "description": "Find company press releases and news"
+    "label": "Executive Team",
+    "query": "\"{input}\" (CEO OR CTO OR CFO OR founder OR executive) site:linkedin.com",
+    "description": "C-level executives"
   },
   {
-    "label": "Financial Documents",
-    "query": "\"{input}\" filetype:pdf \"annual report\" OR \"financial\"",
-    "description": "Search for financial reports"
+    "label": "Employee Count",
+    "query": "\"{input}\" site:linkedin.com employees (100-500 OR 500-1000 OR 1000-5000)",
+    "description": "Company size information"
   },
   {
-    "label": "Job Postings",
-    "query": "\"{input}\" site:indeed.com OR site:glassdoor.com OR site:linkedin.com/jobs",
-    "description": "Find job postings from the company"
+    "label": "Job Postings - All",
+    "query": "\"{input}\" (site:indeed.com OR site:glassdoor.com OR site:linkedin.com/jobs)",
+    "description": "All job platforms"
+  },
+  {
+    "label": "Developer Jobs",
+    "query": "\"{input}\" (engineer OR developer OR programmer) (site:linkedin.com/jobs OR site:indeed.com)",
+    "description": "Tech hiring activity"
+  },
+  {
+    "label": "Security Jobs",
+    "query": "\"{input}\" (security OR infosec OR cybersecurity) (site:linkedin.com/jobs OR site:indeed.com)",
+    "description": "Security team hiring"
   },
   {
     "label": "Company Reviews",
-    "query": "\"{input}\" site:glassdoor.com OR site:indeed.com reviews",
-    "description": "Search employee reviews"
+    "query": "\"{input}\" site:glassdoor.com reviews",
+    "description": "Employee reviews"
+  },
+  {
+    "label": "Salary Information",
+    "query": "\"{input}\" site:glassdoor.com salaries",
+    "description": "Salary ranges"
+  },
+  {
+    "label": "Interview Reviews",
+    "query": "\"{input}\" site:glassdoor.com interviews",
+    "description": "Interview experiences"
+  },
+  {
+    "label": "Press Releases",
+    "query": "\"{input}\" (\"press release\" OR \"announces\" OR \"launches\")",
+    "description": "Company announcements"
+  },
+  {
+    "label": "News Articles",
+    "query": "\"{input}\" site:techcrunch.com OR site:bloomberg.com OR site:reuters.com",
+    "description": "Media coverage"
+  },
+  {
+    "label": "Financial Reports",
+    "query": "\"{input}\" filetype:pdf (\"annual report\" OR \"quarterly report\" OR \"10-K\" OR \"10-Q\")",
+    "description": "Financial documents"
+  },
+  {
+    "label": "SEC Filings",
+    "query": "\"{input}\" site:sec.gov",
+    "description": "SEC regulatory filings"
   },
   {
     "label": "Patents",
     "query": "\"{input}\" site:patents.google.com",
-    "description": "Find company patents"
+    "description": "Patent portfolio"
+  },
+  {
+    "label": "Trademark Search",
+    "query": "\"{input}\" site:uspto.gov trademarks",
+    "description": "Trademark registrations"
   },
   {
     "label": "Acquisitions",
-    "query": "\"{input}\" \"acquired\" OR \"acquisition\" OR \"merger\"",
-    "description": "Search for acquisition news"
+    "query": "\"{input}\" (\"acquired\" OR \"acquisition\" OR \"acquires\" OR \"buys\")",
+    "description": "M&A activity"
+  },
+  {
+    "label": "Funding Rounds",
+    "query": "\"{input}\" (\"series A\" OR \"series B\" OR \"series C\" OR \"funding\" OR \"investment\")",
+    "description": "Venture funding"
+  },
+  {
+    "label": "Investors",
+    "query": "\"{input}\" site:crunchbase.com OR site:pitchbook.com",
+    "description": "Investor information"
   },
   {
     "label": "Technology Stack",
-    "query": "\"{input}\" site:stackshare.io OR site:builtwith.com",
-    "description": "Find technology stack information"
+    "query": "\"{input}\" site:stackshare.io",
+    "description": "Tech stack details"
   },
   {
-    "label": "Security Incidents",
-    "query": "\"{input}\" \"data breach\" OR \"security incident\" OR \"hack\"",
-    "description": "Search for security incidents"
+    "label": "Website Technology",
+    "query": "\"{input}\" site:builtwith.com",
+    "description": "Website tech analysis"
+  },
+  {
+    "label": "GitHub Repos",
+    "query": "\"{input}\" site:github.com",
+    "description": "Open source projects"
+  },
+  {
+    "label": "Code Repositories",
+    "query": "\"{input}\" (site:github.com OR site:gitlab.com OR site:bitbucket.org)",
+    "description": "All code repositories"
+  },
+  {
+    "label": "API Documentation",
+    "query": "\"{input}\" (\"api documentation\" OR \"api docs\" OR \"developer docs\")",
+    "description": "API resources"
+  },
+  {
+    "label": "Bug Bounty Program",
+    "query": "\"{input}\" (\"bug bounty\" OR \"security researcher\" OR \"responsible disclosure\")",
+    "description": "Bug bounty info"
+  },
+  {
+    "label": "Security Policy",
+    "query": "\"{input}\" (\"security policy\" OR \"security.txt\" OR \"/.well-known/security.txt\")",
+    "description": "Security disclosure policy"
+  },
+  {
+    "label": "Data Breaches",
+    "query": "\"{input}\" (\"data breach\" OR \"security incident\" OR \"hacked\" OR \"compromised\")",
+    "description": "Security incidents"
+  },
+  {
+    "label": "CVE Vulnerabilities",
+    "query": "\"{input}\" (CVE OR vulnerability OR \"security advisory\")",
+    "description": "Known vulnerabilities"
+  },
+  {
+    "label": "Shodan Results",
+    "query": "\"{input}\" site:shodan.io",
+    "description": "Shodan IoT search"
+  },
+  {
+    "label": "Censys Results",
+    "query": "\"{input}\" site:censys.io",
+    "description": "Censys internet scan"
+  },
+  {
+    "label": "IP Ranges",
+    "query": "\"{input}\" (\"ip range\" OR \"netblock\" OR \"ASN\")",
+    "description": "Network infrastructure"
+  },
+  {
+    "label": "Subdomains",
+    "query": "site:*.{input}",
+    "description": "All subdomains"
+  },
+  {
+    "label": "SSL Certificates",
+    "query": "\"{input}\" site:crt.sh",
+    "description": "SSL cert transparency"
+  },
+  {
+    "label": "DNS Records",
+    "query": "\"{input}\" (\"dns\" OR \"nameserver\" OR \"mx record\")",
+    "description": "DNS information"
+  },
+  {
+    "label": "Whois Information",
+    "query": "\"{input}\" site:whois.com OR site:domaintools.com",
+    "description": "Domain registration"
+  },
+  {
+    "label": "Partnerships",
+    "query": "\"{input}\" (\"partners with\" OR \"partnership\" OR \"collaboration\")",
+    "description": "Business partnerships"
+  },
+  {
+    "label": "Competitors",
+    "query": "\"{input}\" (\"competitor\" OR \"alternative\" OR \"vs\")",
+    "description": "Competitive analysis"
+  },
+  {
+    "label": "Customer Reviews",
+    "query": "\"{input}\" (site:g2.com OR site:trustpilot.com OR site:capterra.com)",
+    "description": "Product reviews"
+  },
+  {
+    "label": "Social Media",
+    "query": "\"{input}\" (site:twitter.com OR site:facebook.com OR site:instagram.com)",
+    "description": "Social presence"
+  },
+  {
+    "label": "YouTube Channel",
+    "query": "\"{input}\" site:youtube.com",
+    "description": "Video content"
   }
 ]

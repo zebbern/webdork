@@ -1,52 +1,202 @@
 [
   {
-    "label": "SQL Injection Entry Points",
-    "query": "site:{input} inurl:\"id=\" OR inurl:\"pid=\" OR inurl:\"category=\"",
-    "description": "Find potential SQL injection vulnerable URLs"
+    "label": "SQL Injection - Basic",
+    "query": "site:{input} (inurl:\"id=\" OR inurl:\"pid=\" OR inurl:\"cid=\" OR inurl:\"uid=\")",
+    "description": "Common SQL injection entry points"
   },
   {
-    "label": "Open Redirects",
-    "query": "site:{input} inurl:redir OR inurl:redirect OR inurl:return OR inurl:url=http",
-    "description": "Search for open redirect vulnerabilities"
+    "label": "SQL Injection - Advanced",
+    "query": "site:{input} (inurl:\"page=\" OR inurl:\"query=\" OR inurl:\"search=\" OR inurl:\"keyword=\")",
+    "description": "Advanced SQLi parameter patterns"
   },
   {
-    "label": "File Upload Forms",
-    "query": "site:{input} inurl:upload OR intitle:upload",
-    "description": "Find file upload functionality"
+    "label": "SQL Errors - MySQL",
+    "query": "site:{input} (intext:\"MySQL\" OR intext:\"mysql_fetch\" OR intext:\"mysql_num_rows\" OR intext:\"SQL syntax\")",
+    "description": "MySQL error messages"
   },
   {
-    "label": "Error Messages",
-    "query": "site:{input} intext:\"syntax error\" OR intext:\"mysql_fetch\" OR intext:\"Warning:\"",
-    "description": "Find pages with error messages exposing info"
+    "label": "SQL Errors - MSSQL",
+    "query": "site:{input} (intext:\"ODBC SQL Server Driver\" OR intext:\"Microsoft OLE DB Provider\" OR intext:\"SQLServer JDBC Driver\")",
+    "description": "MS SQL Server errors"
   },
   {
-    "label": "PHP Info Pages",
-    "query": "site:{input} inurl:phpinfo.php OR intitle:\"phpinfo()\"",
-    "description": "Locate PHP information disclosure pages"
+    "label": "SQL Errors - PostgreSQL",
+    "query": "site:{input} (intext:\"PostgreSQL\" OR intext:\"pg_query\" OR intext:\"pg_exec\")",
+    "description": "PostgreSQL error messages"
   },
   {
-    "label": "Exposed Git",
-    "query": "site:{input} inurl:.git OR intitle:\"Index of /.git\"",
-    "description": "Find exposed Git repositories"
+    "label": "SQL Errors - Oracle",
+    "query": "site:{input} (intext:\"ORA-\" OR intext:\"Oracle error\" OR intext:\"Oracle JDBC\")",
+    "description": "Oracle database errors"
   },
   {
-    "label": "Backup and Old Files",
-    "query": "site:{input} ext:bak OR ext:old OR ext:backup OR ext:~",
-    "description": "Search for backup files"
+    "label": "XSS Vulnerable Parameters",
+    "query": "site:{input} (inurl:\"search=\" OR inurl:\"q=\" OR inurl:\"keyword=\" OR inurl:\"query=\")",
+    "description": "Potential XSS injection points"
   },
   {
-    "label": "Default Pages",
-    "query": "site:{input} intitle:\"Welcome to\" OR intitle:\"Apache\" OR intitle:\"IIS\"",
-    "description": "Find default installation pages"
+    "label": "Open Redirect",
+    "query": "site:{input} (inurl:\"url=http\" OR inurl:\"redirect=http\" OR inurl:\"return=http\" OR inurl:\"next=http\")",
+    "description": "Open redirect vulnerabilities"
   },
   {
-    "label": "Admin Interface Exposed",
-    "query": "site:{input} intitle:\"Admin\" OR intitle:\"Dashboard\" inurl:admin",
-    "description": "Exposed admin interfaces"
+    "label": "LFI - Local File Inclusion",
+    "query": "site:{input} (inurl:\"file=\" OR inurl:\"page=\" OR inurl:\"path=\" OR inurl:\"include=\")",
+    "description": "Local file inclusion vectors"
   },
   {
-    "label": "CGI Scripts",
+    "label": "RFI - Remote File Inclusion",
+    "query": "site:{input} (inurl:\"file=http\" OR inurl:\"page=http\" OR inurl:\"include=http\")",
+    "description": "Remote file inclusion points"
+  },
+  {
+    "label": "Path Traversal",
+    "query": "site:{input} (inurl:\"../\" OR inurl:\"%2e%2e%2f\" OR inurl:\"..\\\\\")",
+    "description": "Directory traversal attempts"
+  },
+  {
+    "label": "Command Injection",
+    "query": "site:{input} (inurl:\"cmd=\" OR inurl:\"exec=\" OR inurl:\"command=\" OR inurl:\"execute=\")",
+    "description": "OS command injection points"
+  },
+  {
+    "label": "XXE - XML External Entity",
+    "query": "site:{input} (inurl:\".xml\" OR intext:\"<?xml\" OR intext:\"DOCTYPE\")",
+    "description": "XML external entity risks"
+  },
+  {
+    "label": "SSRF - Server Side Request Forgery",
+    "query": "site:{input} (inurl:\"url=\" OR inurl:\"uri=\" OR inurl:\"path=http\" OR inurl:\"dest=\")",
+    "description": "SSRF vulnerable parameters"
+  },
+  {
+    "label": "IDOR - Parameter Tampering",
+    "query": "site:{input} (inurl:\"user_id=\" OR inurl:\"account_id=\" OR inurl:\"profile_id=\")",
+    "description": "Insecure direct object references"
+  },
+  {
+    "label": "File Upload",
+    "query": "site:{input} (inurl:\"upload\" OR intitle:\"upload\" OR intext:\"choose file\")",
+    "description": "File upload functionality"
+  },
+  {
+    "label": "Unrestricted Upload",
+    "query": "site:{input} inurl:upload (ext:php OR ext:asp OR ext:aspx OR ext:jsp)",
+    "description": "Unrestricted file upload"
+  },
+  {
+    "label": "PHPInfo Disclosure",
+    "query": "site:{input} (inurl:\"phpinfo.php\" OR intitle:\"phpinfo()\" OR intext:\"PHP Version\")",
+    "description": "PHP information disclosure"
+  },
+  {
+    "label": "Directory Listing",
+    "query": "site:{input} (intitle:\"Index of\" OR intitle:\"Directory listing\")",
+    "description": "Exposed directory listings"
+  },
+  {
+    "label": "Git Exposed",
+    "query": "site:{input} (inurl:\".git\" OR intitle:\"Index of /.git\" OR inurl:\"/.git/config\")",
+    "description": "Exposed .git directories"
+  },
+  {
+    "label": "SVN Exposed",
+    "query": "site:{input} (inurl:\".svn\" OR intitle:\"Index of /.svn\")",
+    "description": "Exposed .svn directories"
+  },
+  {
+    "label": "DS_Store Files",
+    "query": "site:{input} (inurl:\".DS_Store\" OR intitle:\"Index of\" \".DS_Store\")",
+    "description": "Exposed macOS metadata files"
+  },
+  {
+    "label": "Backup Files",
+    "query": "site:{input} (ext:bak OR ext:old OR ext:backup OR ext:~ OR ext:swp)",
+    "description": "Backup file exposure"
+  },
+  {
+    "label": "Log Files Exposed",
+    "query": "site:{input} (ext:log OR intitle:\"Index of\" \"access.log\" OR intitle:\"Index of\" \"error.log\")",
+    "description": "Exposed log files"
+  },
+  {
+    "label": "CGI-BIN",
     "query": "site:{input} inurl:cgi-bin",
-    "description": "Find CGI scripts"
+    "description": "CGI script directories"
+  },
+  {
+    "label": "Tomcat Manager",
+    "query": "site:{input} (inurl:\"/manager/html\" OR intitle:\"Apache Tomcat\")",
+    "description": "Tomcat manager interfaces"
+  },
+  {
+    "label": "JBoss Console",
+    "query": "site:{input} (inurl:\"/jmx-console\" OR inurl:\"/web-console\")",
+    "description": "JBoss management consoles"
+  },
+  {
+    "label": "WebLogic Console",
+    "query": "site:{input} inurl:\"/console/login\"",
+    "description": "Oracle WebLogic console"
+  },
+  {
+    "label": "Jenkins Exposed",
+    "query": "site:{input} (inurl:\"/jenkins\" OR intitle:\"Dashboard [Jenkins]\")",
+    "description": "Jenkins CI/CD instances"
+  },
+  {
+    "label": "Kibana Exposed",
+    "query": "site:{input} (inurl:\"/app/kibana\" OR intitle:\"Kibana\")",
+    "description": "Kibana dashboards"
+  },
+  {
+    "label": "Grafana Exposed",
+    "query": "site:{input} (inurl:\"/grafana\" OR intitle:\"Grafana\")",
+    "description": "Grafana monitoring"
+  },
+  {
+    "label": "Jupyter Notebooks",
+    "query": "site:{input} (inurl:\"/notebooks\" OR intitle:\"Jupyter\")",
+    "description": "Jupyter notebook instances"
+  },
+  {
+    "label": "Elasticsearch",
+    "query": "site:{input} (inurl:\":9200\" OR intext:\"_cluster/health\")",
+    "description": "Elasticsearch interfaces"
+  },
+  {
+    "label": "MongoDB Exposed",
+    "query": "site:{input} (inurl:\":27017\" OR inurl:\":28017\")",
+    "description": "MongoDB database ports"
+  },
+  {
+    "label": "Redis Exposed",
+    "query": "site:{input} inurl:\":6379\"",
+    "description": "Redis database instances"
+  },
+  {
+    "label": "Docker API",
+    "query": "site:{input} (inurl:\":2375\" OR inurl:\":2376\" OR inurl:\"/containers/json\")",
+    "description": "Docker API endpoints"
+  },
+  {
+    "label": "Kubernetes Dashboard",
+    "query": "site:{input} (inurl:\"/api/v1\" OR intitle:\"Kubernetes Dashboard\")",
+    "description": "Kubernetes management"
+  },
+  {
+    "label": "CORS Misconfiguration",
+    "query": "site:{input} (intext:\"Access-Control-Allow-Origin: *\")",
+    "description": "CORS policy issues"
+  },
+  {
+    "label": "CSRF Tokens Missing",
+    "query": "site:{input} (inurl:\"form\" -intext:\"csrf\" -intext:\"token\")",
+    "description": "Forms without CSRF protection"
+  },
+  {
+    "label": "Default Credentials",
+    "query": "site:{input} (intext:\"default password\" OR intext:\"default login\")",
+    "description": "Default credential documentation"
   }
 ]

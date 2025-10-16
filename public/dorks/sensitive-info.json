@@ -1,72 +1,202 @@
 [
   {
-    "label": "Configuration Files",
-    "query": "site:{input} filetype:env OR filetype:config OR filetype:ini OR filetype:conf",
-    "description": "Find configuration files that may contain sensitive data"
+    "label": "API Keys - Generic",
+    "query": "site:{input} (intext:\"api_key\" OR intext:\"apikey\" OR intext:\"api-key\" OR intext:\"apiKey\")",
+    "description": "Generic API key patterns"
   },
   {
-    "label": "Database Files",
-    "query": "site:{input} filetype:sql OR filetype:db OR filetype:sqlite",
-    "description": "Search for database files"
+    "label": "API Keys - Specific",
+    "query": "site:{input} (intext:\"stripe_api_key\" OR intext:\"twilio\" OR intext:\"firebase\" OR intext:\"mailgun\")",
+    "description": "Service-specific API keys"
   },
   {
-    "label": "Password Files",
-    "query": "site:{input} intext:password OR intext:passwd",
-    "description": "Find pages containing password references"
+    "label": "AWS Keys",
+    "query": "site:{input} (intext:\"AKIA\" OR intext:\"aws_access_key_id\" OR intext:\"aws_secret_access_key\")",
+    "description": "AWS access credentials"
   },
   {
-    "label": "API Keys",
-    "query": "site:{input} intext:\"api_key\" OR intext:\"apikey\" OR intext:\"api-key\"",
-    "description": "Search for exposed API keys"
+    "label": "Google Cloud Keys",
+    "query": "site:{input} (intext:\"AIza\" OR intext:\"GOOGLE_API_KEY\" OR intext:\"GCP_API_KEY\")",
+    "description": "Google Cloud credentials"
   },
   {
-    "label": "Private Keys",
-    "query": "site:{input} filetype:pem OR filetype:key OR intext:\"BEGIN PRIVATE KEY\"",
-    "description": "Find private key files"
+    "label": "Azure Keys",
+    "query": "site:{input} (intext:\"AZURE\" OR intext:\"azure_key\" OR intext:\"azure_secret\")",
+    "description": "Microsoft Azure credentials"
   },
   {
-    "label": "Environment Variables",
-    "query": "site:{input} filetype:env intext:DB_PASSWORD OR intext:SECRET",
-    "description": "Search for .env files with credentials"
+    "label": "Private Keys - RSA",
+    "query": "site:{input} (intext:\"BEGIN RSA PRIVATE KEY\" OR intext:\"BEGIN PRIVATE KEY\")",
+    "description": "RSA private keys"
   },
   {
-    "label": "Connection Strings",
-    "query": "site:{input} intext:\"connection string\" OR intext:\"jdbc:\" OR intext:\"mongodb://\"",
-    "description": "Find database connection strings"
-  },
-  {
-    "label": "Email Credentials",
-    "query": "site:{input} intext:\"smtp\" AND intext:\"password\"",
-    "description": "Search for email configuration with passwords"
-  },
-  {
-    "label": "FTP Credentials",
-    "query": "site:{input} filetype:log intext:\"ftp\" AND intext:\"password\"",
-    "description": "Find FTP credentials in logs"
+    "label": "Private Keys - Files",
+    "query": "site:{input} (ext:pem OR ext:key OR ext:ppk)",
+    "description": "Private key files"
   },
   {
     "label": "SSH Keys",
-    "query": "site:{input} filetype:pem OR intext:\"BEGIN RSA PRIVATE KEY\"",
-    "description": "Search for SSH private keys"
+    "query": "site:{input} (filename:id_rsa OR filename:id_dsa OR intext:\"ssh-rsa\")",
+    "description": "SSH private keys"
   },
   {
-    "label": "Cloud Credentials",
-    "query": "site:{input} intext:\"aws_access_key_id\" OR intext:\"aws_secret_access_key\"",
-    "description": "Find AWS or cloud credentials"
+    "label": "OAuth Tokens",
+    "query": "site:{input} (intext:\"oauth_token\" OR intext:\"oauth_secret\" OR intext:\"access_token\")",
+    "description": "OAuth credentials"
   },
   {
-    "label": "Token Leaks",
-    "query": "site:{input} intext:\"token\" OR intext:\"bearer\" OR intext:\"authorization\"",
-    "description": "Search for authentication tokens"
+    "label": "JWT Tokens",
+    "query": "site:{input} (intext:\"eyJ\" OR intext:\"jwt\" OR intext:\"Bearer eyJ\")",
+    "description": "JSON Web Tokens"
   },
   {
-    "label": "Internal Documents",
-    "query": "site:{input} intitle:\"confidential\" OR intitle:\"internal only\" filetype:pdf",
-    "description": "Find confidential or internal documents"
+    "label": "Database Passwords",
+    "query": "site:{input} (intext:\"DB_PASSWORD\" OR intext:\"DATABASE_PASSWORD\" OR intext:\"db_pass\")",
+    "description": "Database credentials"
   },
   {
-    "label": "Backup Files with Credentials",
-    "query": "site:{input} filetype:bak OR filetype:backup intext:password",
-    "description": "Search backup files for credentials"
+    "label": "Connection Strings",
+    "query": "site:{input} (intext:\"Server=\" OR intext:\"jdbc:\" OR intext:\"mongodb://\" OR intext:\"mysql://\")",
+    "description": "Database connection strings"
+  },
+  {
+    "label": "SMTP Credentials",
+    "query": "site:{input} (intext:\"smtp_password\" OR intext:\"mail_password\" OR intext:\"email_password\")",
+    "description": "Email server credentials"
+  },
+  {
+    "label": "FTP Credentials",
+    "query": "site:{input} (intext:\"ftp_username\" OR intext:\"ftp_password\" OR intext:\"ftp://\")",
+    "description": "FTP server credentials"
+  },
+  {
+    "label": "Environment Files",
+    "query": "site:{input} (ext:env OR filename:.env OR filename:.env.local OR filename:.env.production)",
+    "description": ".env configuration files"
+  },
+  {
+    "label": "Config Files",
+    "query": "site:{input} (ext:config OR ext:conf OR ext:cfg OR ext:ini)",
+    "description": "Configuration files"
+  },
+  {
+    "label": "Password in URL",
+    "query": "site:{input} inurl:password",
+    "description": "Passwords in URLs"
+  },
+  {
+    "label": "Passwords - Generic",
+    "query": "site:{input} (intext:\"password =\" OR intext:\"pwd =\" OR intext:\"pass =\" OR intext:\"passwd =\")",
+    "description": "Generic password patterns"
+  },
+  {
+    "label": "Secret Keys",
+    "query": "site:{input} (intext:\"secret_key\" OR intext:\"SECRET_KEY\" OR intext:\"secret =\")",
+    "description": "Application secret keys"
+  },
+  {
+    "label": "Encryption Keys",
+    "query": "site:{input} (intext:\"encryption_key\" OR intext:\"cipher_key\" OR intext:\"crypto_key\")",
+    "description": "Encryption keys"
+  },
+  {
+    "label": "GitHub Tokens",
+    "query": "site:{input} (intext:\"ghp_\" OR intext:\"github_token\" OR intext:\"GITHUB_TOKEN\")",
+    "description": "GitHub access tokens"
+  },
+  {
+    "label": "Slack Tokens",
+    "query": "site:{input} (intext:\"xoxb-\" OR intext:\"xoxp-\" OR intext:\"SLACK_TOKEN\")",
+    "description": "Slack API tokens"
+  },
+  {
+    "label": "Stripe Keys",
+    "query": "site:{input} (intext:\"sk_live_\" OR intext:\"pk_live_\" OR intext:\"STRIPE_KEY\")",
+    "description": "Stripe payment keys"
+  },
+  {
+    "label": "Twilio Keys",
+    "query": "site:{input} (intext:\"AC\" AND intext:\"twilio\" OR intext:\"TWILIO_\")",
+    "description": "Twilio API credentials"
+  },
+  {
+    "label": "PayPal Credentials",
+    "query": "site:{input} (intext:\"paypal\" AND intext:\"client_id\" OR intext:\"PAYPAL_\")",
+    "description": "PayPal API credentials"
+  },
+  {
+    "label": "SendGrid Keys",
+    "query": "site:{input} (intext:\"SG.\" OR intext:\"SENDGRID_API_KEY\")",
+    "description": "SendGrid API keys"
+  },
+  {
+    "label": "Mailgun Keys",
+    "query": "site:{input} (intext:\"key-\" AND intext:\"mailgun\" OR intext:\"MAILGUN_API_KEY\")",
+    "description": "Mailgun API keys"
+  },
+  {
+    "label": "Firebase Keys",
+    "query": "site:{input} (intext:\"firebaseApiKey\" OR intext:\"FIREBASE_API_KEY\")",
+    "description": "Firebase credentials"
+  },
+  {
+    "label": "Heroku Keys",
+    "query": "site:{input} (intext:\"heroku\" AND intext:\"api_key\" OR intext:\"HEROKU_API_KEY\")",
+    "description": "Heroku API keys"
+  },
+  {
+    "label": "Docker Hub Tokens",
+    "query": "site:{input} (intext:\"dockerhub\" OR intext:\"DOCKER_PASSWORD\")",
+    "description": "Docker Hub credentials"
+  },
+  {
+    "label": "NPM Tokens",
+    "query": "site:{input} (intext:\"npm_token\" OR intext:\"NPM_TOKEN\" OR intext:\"//registry.npmjs.org/:_authToken\")",
+    "description": "NPM registry tokens"
+  },
+  {
+    "label": "PyPI Tokens",
+    "query": "site:{input} (intext:\"pypi_token\" OR intext:\"PYPI_TOKEN\")",
+    "description": "Python package index tokens"
+  },
+  {
+    "label": "Credentials JSON",
+    "query": "site:{input} ext:json (credentials OR password OR secret OR token OR api_key)",
+    "description": "Credentials in JSON files"
+  },
+  {
+    "label": "Credentials XML",
+    "query": "site:{input} ext:xml (credentials OR password OR secret)",
+    "description": "Credentials in XML files"
+  },
+  {
+    "label": "Credentials YAML",
+    "query": "site:{input} ext:yaml (credentials OR password OR secret OR token)",
+    "description": "Credentials in YAML files"
+  },
+  {
+    "label": "SQL Dumps",
+    "query": "site:{input} ext:sql (password OR passwd OR pwd)",
+    "description": "Passwords in SQL dumps"
+  },
+  {
+    "label": "Backup with Passwords",
+    "query": "site:{input} (ext:bak OR ext:backup OR ext:old) (password OR credentials)",
+    "description": "Credentials in backups"
+  },
+  {
+    "label": "Log Files - Passwords",
+    "query": "site:{input} ext:log (password OR passwd OR pwd)",
+    "description": "Passwords in log files"
+  },
+  {
+    "label": "Hardcoded Passwords",
+    "query": "site:{input} (ext:php OR ext:js OR ext:py) (password OR passwd) (= OR :)",
+    "description": "Hardcoded passwords in code"
+  },
+  {
+    "label": "Basic Auth",
+    "query": "site:{input} (intext:\"Authorization: Basic\" OR inurl:\"@\")",
+    "description": "Basic authentication"
   }
 ]
