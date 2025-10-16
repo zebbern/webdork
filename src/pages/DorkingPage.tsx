@@ -223,9 +223,9 @@ export default function DorkingPage() {
             href="https://github.com/zebbern"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mb-4 group"
+            className="inline-block mb-6 group"
           >
-            <div className="relative w-20 h-20 mx-auto">
+            <div className="relative w-24 h-24 mx-auto">
               <img
                 src="/zeb.png"
                 alt="GitHub Profile"
