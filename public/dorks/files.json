@@ -1,0 +1,72 @@
+[
+  {
+    "label": "PDF Documents",
+    "query": "site:{input} filetype:pdf",
+    "description": "Find all PDF documents"
+  },
+  {
+    "label": "Word Documents",
+    "query": "site:{input} filetype:doc OR filetype:docx",
+    "description": "Search for Word documents"
+  },
+  {
+    "label": "Excel Spreadsheets",
+    "query": "site:{input} filetype:xls OR filetype:xlsx",
+    "description": "Find Excel files"
+  },
+  {
+    "label": "PowerPoint Presentations",
+    "query": "site:{input} filetype:ppt OR filetype:pptx",
+    "description": "Locate presentation files"
+  },
+  {
+    "label": "Text Files",
+    "query": "site:{input} filetype:txt",
+    "description": "Search for text files"
+  },
+  {
+    "label": "CSV Data Files",
+    "query": "site:{input} filetype:csv",
+    "description": "Find CSV data files"
+  },
+  {
+    "label": "SQL Files",
+    "query": "site:{input} filetype:sql",
+    "description": "Search for SQL database files"
+  },
+  {
+    "label": "Log Files",
+    "query": "site:{input} filetype:log",
+    "description": "Find log files"
+  },
+  {
+    "label": "Backup Files",
+    "query": "site:{input} filetype:bak OR filetype:backup OR filetype:old",
+    "description": "Locate backup files"
+  },
+  {
+    "label": "Archive Files",
+    "query": "site:{input} filetype:zip OR filetype:rar OR filetype:tar OR filetype:gz",
+    "description": "Find compressed archive files"
+  },
+  {
+    "label": "Source Code",
+    "query": "site:{input} filetype:java OR filetype:py OR filetype:js OR filetype:php",
+    "description": "Search for source code files"
+  },
+  {
+    "label": "JSON Files",
+    "query": "site:{input} filetype:json",
+    "description": "Find JSON data files"
+  },
+  {
+    "label": "XML Files",
+    "query": "site:{input} filetype:xml",
+    "description": "Search for XML files"
+  },
+  {
+    "label": "Image Files",
+    "query": "site:{input} filetype:jpg OR filetype:png OR filetype:gif",
+    "description": "Find image files"
+  }
+]

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Colors - Dark Liquid Glass Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 90%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 90%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 245 58% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 267 50% 72%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 15%;
+    --input: 240 6% 15%;
+    --ring: 245 58% 61%;
+
+    /* Charts */
+    --chart-1: 142.0859 70.5628% 45.2941%;
+    --chart-2: 160.1183 84.0796% 39.4118%;
+    --chart-3: 161.3793 93.5484% 30.3922%;
+    --chart-4: 162.931 93.5484% 24.3137%;
+    --chart-5: 163.1461 88.1188% 19.8039%;
+
+    /* Sidebar */
+    --sidebar: 204 93.75% 93.7255%;
+    --sidebar-foreground: 216.9231 19.1176% 26.6667%;
+    --sidebar-primary: 142.0859 70.5628% 45.2941%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 149.2683 80.3922% 90%;
+    --sidebar-accent-foreground: 216.9231 19.1176% 26.6667%;
+    --sidebar-border: 220 13.0435% 90.9804%;
+    --sidebar-ring: 142.0859 70.5628% 45.2941%;
+
+    /* Fonts */
+    --font-sans: Inter, sans-serif;
+    --font-serif: Inter, serif;
+    --font-mono: Inter, monospace;
+
+    /* Shadows */
+    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -2px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 8px 10px -2px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+
+    /* Misc */
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2222 47.3684% 11.1765%;
+    --foreground: 216 12.1951% 83.9216%;
+    --card: 217.2414 32.5843% 17.451%;
+    --card-foreground: 216 12.1951% 83.9216%;
+    --popover: 217.2414 32.5843% 17.451%;
+    --popover-foreground: 216 12.1951% 83.9216%;
+    --primary: 158.1132 64.3725% 51.5686%;
+    --primary-foreground: 222.2222 47.3684% 11.1765%;
+    --secondary: 217.7778 23.0769% 22.9412%;
+    --secondary-foreground: 240 5.0279% 64.902%;
+    --muted: 217.2414 32.5843% 17.451%;
+    --muted-foreground: 220 8.9362% 46.0784%;
+    --accent: 216.9231 19.1176% 26.6667%;
+    --accent-foreground: 240 5.0279% 64.902%;
+    --destructive: 0 84.2365% 60.1961%;
+    --destructive-foreground: 222.2222 47.3684% 11.1765%;
+    --border: 215 13.7931% 34.1176%;
+    --input: 215 13.7931% 34.1176%;
+    --ring: 158.1132 64.3725% 51.5686%;
+
+    --chart-1: 158.1132 64.3725% 51.5686%;
+    --chart-2: 172.4551 66.0079% 50.3922%;
+    --chart-3: 142.0859 70.5628% 45.2941%;
+    --chart-4: 160.1183 84.0796% 39.4118%;
+    --chart-5: 161.3793 93.5484% 30.3922%;
+
+    --sidebar: 217.2414 32.5843% 17.451%;
+    --sidebar-foreground: 216 12.1951% 83.9216%;
+    --sidebar-primary: 158.1132 64.3725% 51.5686%;
+    --sidebar-primary-foreground: 222.2222 47.3684% 11.1765%;
+    --sidebar-accent: 216.9231 19.1176% 26.6667%;
+    --sidebar-accent-foreground: 240 5.0279% 64.902%;
+    --sidebar-border: 215 13.7931% 34.1176%;
+    --sidebar-ring: 158.1132 64.3725% 51.5686%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: var(--tracking-normal);
+  }
+}
+
+/* Liquid Glass Effects */
+.glass {
+  background: rgba(30, 30, 46, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(30, 30, 46, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

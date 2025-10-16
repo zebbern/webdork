@@ -1,0 +1,52 @@
+[
+  {
+    "label": "SQL Injection Entry Points",
+    "query": "site:{input} inurl:\"id=\" OR inurl:\"pid=\" OR inurl:\"category=\"",
+    "description": "Find potential SQL injection vulnerable URLs"
+  },
+  {
+    "label": "Open Redirects",
+    "query": "site:{input} inurl:redir OR inurl:redirect OR inurl:return OR inurl:url=http",
+    "description": "Search for open redirect vulnerabilities"
+  },
+  {
+    "label": "File Upload Forms",
+    "query": "site:{input} inurl:upload OR intitle:upload",
+    "description": "Find file upload functionality"
+  },
+  {
+    "label": "Error Messages",
+    "query": "site:{input} intext:\"syntax error\" OR intext:\"mysql_fetch\" OR intext:\"Warning:\"",
+    "description": "Find pages with error messages exposing info"
+  },
+  {
+    "label": "PHP Info Pages",
+    "query": "site:{input} inurl:phpinfo.php OR intitle:\"phpinfo()\"",
+    "description": "Locate PHP information disclosure pages"
+  },
+  {
+    "label": "Exposed Git",
+    "query": "site:{input} inurl:.git OR intitle:\"Index of /.git\"",
+    "description": "Find exposed Git repositories"
+  },
+  {
+    "label": "Backup and Old Files",
+    "query": "site:{input} ext:bak OR ext:old OR ext:backup OR ext:~",
+    "description": "Search for backup files"
+  },
+  {
+    "label": "Default Pages",
+    "query": "site:{input} intitle:\"Welcome to\" OR intitle:\"Apache\" OR intitle:\"IIS\"",
+    "description": "Find default installation pages"
+  },
+  {
+    "label": "Admin Interface Exposed",
+    "query": "site:{input} intitle:\"Admin\" OR intitle:\"Dashboard\" inurl:admin",
+    "description": "Exposed admin interfaces"
+  },
+  {
+    "label": "CGI Scripts",
+    "query": "site:{input} inurl:cgi-bin",
+    "description": "Find CGI scripts"
+  }
+]

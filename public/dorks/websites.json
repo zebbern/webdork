@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Site Search",
+    "query": "site:{input}",
+    "description": "All indexed pages from this domain"
+  },
+  {
+    "label": "Subdomains",
+    "query": "site:*.{input}",
+    "description": "Find all subdomains of the website"
+  },
+  {
+    "label": "Login Pages",
+    "query": "site:{input} inurl:login OR inurl:signin OR inurl:auth",
+    "description": "Discover login and authentication pages"
+  },
+  {
+    "label": "Directory Listings",
+    "query": "site:{input} intitle:\"index of\"",
+    "description": "Find exposed directory listings"
+  },
+  {
+    "label": "Email Addresses",
+    "query": "site:{input} intext:@{input}",
+    "description": "Find email addresses on the domain"
+  },
+  {
+    "label": "Contact Pages",
+    "query": "site:{input} inurl:contact OR intitle:contact",
+    "description": "Locate contact information pages"
+  },
+  {
+    "label": "Sitemap Files",
+    "query": "site:{input} filetype:xml inurl:sitemap",
+    "description": "Find XML sitemap files"
+  },
+  {
+    "label": "Robots.txt",
+    "query": "site:{input} inurl:robots.txt",
+    "description": "View robots.txt file"
+  },
+  {
+    "label": "API Endpoints",
+    "query": "site:{input} inurl:api OR intitle:api",
+    "description": "Find API documentation or endpoints"
+  },
+  {
+    "label": "WordPress Sites",
+    "query": "site:{input} inurl:wp-content OR inurl:wp-admin",
+    "description": "Identify WordPress installation"
+  },
+  {
+    "label": "Search Functionality",
+    "query": "site:{input} inurl:search OR inurl:query",
+    "description": "Find search pages on the site"
+  },
+  {
+    "label": "Error Pages",
+    "query": "site:{input} intitle:\"404\" OR intitle:\"error\"",
+    "description": "Locate error pages"
+  }
+]
