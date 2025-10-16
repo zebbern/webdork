@@ -274,28 +274,27 @@ export default function DorkingPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
-          <a
-            href="https://github.com/zebbern"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mb-6 group"
-          >
-            <div className="relative w-24 h-24 mx-auto">
-              <img
-                src="/zeb.png"
-                alt="GitHub Profile"
-                className="w-full h-full rounded-full object-cover glass-strong ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all group-hover:scale-105 shadow-lg"
-              />
-              <div className="absolute inset-0 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="flex flex-col items-center">
+            <a
+              href="https://github.com/zebbern"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-4 group"
+            >
+              <div className="relative w-24 h-24">
+                <img
+                  src="/zeb.png"
+                  alt="GitHub Profile"
+                  className="w-full h-full rounded-full object-cover glass-strong ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all group-hover:scale-105 shadow-lg"
+                />
+                <div className="absolute inset-0 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+            </a>
+            <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm text-muted-foreground">Google Dorking Assistant</span>
             </div>
-          </a>
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass rounded-full">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">Google Dorking Assistant</span>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Advanced Google search queries to find exactly what you're looking for
-          </p>
         </div>
 
         {/* Search Input */}
