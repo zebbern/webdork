@@ -1,52 +1,137 @@
 [
   {
-    "label": "Admin Panels",
-    "query": "site:{input} inurl:admin OR inurl:administrator",
-    "description": "Find admin panel URLs"
+    "label": "Admin Login Basic",
+    "query": "site:{input} intitle:\"admin login\"",
+    "description": "Basic admin login pages"
   },
   {
-    "label": "Dashboard Pages",
-    "query": "site:{input} inurl:dashboard OR intitle:dashboard",
-    "description": "Locate dashboard interfaces"
+    "label": "Admin Console",
+    "query": "intitle:\"admin console\" inurl:login site:{input}",
+    "description": "Admin console login"
   },
   {
-    "label": "Control Panels",
-    "query": "site:{input} inurl:cpanel OR inurl:controlpanel OR inurl:control",
-    "description": "Find control panel pages"
-  },
-  {
-    "label": "Backend URLs",
-    "query": "site:{input} inurl:backend OR inurl:admin-panel",
-    "description": "Search for backend administration URLs"
-  },
-  {
-    "label": "Management Console",
-    "query": "site:{input} inurl:manage OR intitle:\"management console\"",
-    "description": "Find management interfaces"
-  },
-  {
-    "label": "CMS Admin",
-    "query": "site:{input} inurl:wp-admin OR inurl:administrator OR inurl:admin.php",
-    "description": "CMS admin pages (WordPress, Joomla, etc.)"
+    "label": "Django Admin",
+    "query": "intitle:\"Django site admin\" inurl:admin site:{input}",
+    "description": "Django framework admin"
   },
   {
     "label": "PHPMyAdmin",
-    "query": "site:{input} inurl:phpmyadmin",
-    "description": "Find PHPMyAdmin database interfaces"
+    "query": "site:{input} inurl:\"/phpmyadmin/\" intext:\"Create new database\"",
+    "description": "PHPMyAdmin interface"
   },
   {
-    "label": "Admin Login",
-    "query": "site:{input} intitle:\"admin login\" OR intitle:\"administrator login\"",
-    "description": "Admin-specific login pages"
+    "label": "Admin Area",
+    "query": "site:{input} inurl:\"/admin_area/\" intitle:\"Control Panel\"",
+    "description": "Admin area control panel"
   },
   {
-    "label": "Configuration Pages",
-    "query": "site:{input} inurl:config OR inurl:configuration",
-    "description": "Find configuration interfaces"
+    "label": "Admin Panel",
+    "query": "site:{input} inurl:\"/admin_panel/\" -github",
+    "description": "General admin panel"
   },
   {
-    "label": "User Management",
-    "query": "site:{input} inurl:users OR intitle:\"user management\"",
-    "description": "Locate user management pages"
+    "label": "Admin Dashboard",
+    "query": "site:{input} inurl:\"/admin\" \"Dashboard\"",
+    "description": "Admin dashboard interface"
+  },
+  {
+    "label": "Database Admin",
+    "query": "site:{input} inurl:\"/dbadmin/\" \"Database Administration\"",
+    "description": "Database administration"
+  },
+  {
+    "label": "WordPress Admin",
+    "query": "site:{input} inurl:wp-admin",
+    "description": "WordPress admin panel"
+  },
+  {
+    "label": "Admin Login ASP",
+    "query": "site:{input} inurl:(\"administrator/login.aspx\" OR \"admin/login.aspx\")",
+    "description": "ASP.NET admin login"
+  },
+  {
+    "label": "Admin Login PHP",
+    "query": "site:{input} inurl:(\"admin/password.php\")",
+    "description": "PHP admin password page"
+  },
+  {
+    "label": "Admin Keys",
+    "query": "site:{input} inurl:\"/admin_keys/\"",
+    "description": "Admin API keys page"
+  },
+  {
+    "label": "Redis Admin",
+    "query": "site:{input} inurl:\"/redis-admin\"",
+    "description": "Redis administration"
+  },
+  {
+    "label": "PostgreSQL Admin",
+    "query": "site:{input} inurl:\"/php-pg-admin/\" \"PostgreSQL\"",
+    "description": "PostgreSQL admin interface"
+  },
+  {
+    "label": "Admin Credentials",
+    "query": "site:{input} \"admin password\"",
+    "description": "Pages mentioning admin password"
+  },
+  {
+    "label": "Admin Grades",
+    "query": "site:{input} admin grades",
+    "description": "Educational admin grade access"
+  },
+  {
+    "label": "HTTP Admin",
+    "query": "site:{input} http intitle: admin",
+    "description": "HTTP admin interfaces"
+  },
+  {
+    "label": "Admin Index",
+    "query": "site:{input} intitle:\"index of\" *.admin",
+    "description": "Exposed admin directories"
+  },
+  {
+    "label": "Admin Config",
+    "query": "site:{input} inurl:\"/admin/config\" intext:\"setup\"",
+    "description": "Admin configuration setup"
+  },
+  {
+    "label": "Tomcat Manager",
+    "query": "site:{input} inurl:\"/manager/html\" intitle:\"Tomcat Web Application Manager\"",
+    "description": "Tomcat web application manager"
+  },
+  {
+    "label": "Admin Settings",
+    "query": "site:{input} inurl:\"/admin/settings\" \"account\"",
+    "description": "Admin settings page"
+  },
+  {
+    "label": "AdminCP",
+    "query": "site:{input} inurl:\"admincp\" intext:\"control panel\"",
+    "description": "AdminCP control panel"
+  },
+  {
+    "label": "Admin Tools",
+    "query": "site:{input} inurl:\"/admin-tools\" intext:\"restricted access\"",
+    "description": "Admin tools with restricted access"
+  },
+  {
+    "label": "Admin Portal",
+    "query": "site:{input} intitle:\"admin portal\" inurl:\"login\" -guide -help -docs",
+    "description": "Admin portal login (excluding docs)"
+  },
+  {
+    "label": "Admin Access",
+    "query": "site:{input} intitle:\"admin access\" inurl:\"/admin\"",
+    "description": "Admin access pages"
+  },
+  {
+    "label": "Admin System",
+    "query": "site:{input} inurl:\"/admin-console\" intitle:\"System Admin\"",
+    "description": "System admin console"
+  },
+  {
+    "label": "Admin Interface",
+    "query": "site:{input} intitle:\"admin interface\" inurl:\"/login\"",
+    "description": "Admin login interface"
   }
 ]

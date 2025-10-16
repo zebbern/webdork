@@ -2,61 +2,136 @@
   {
     "label": "Site Search",
     "query": "site:{input}",
-    "description": "All indexed pages from this domain"
+    "description": "All indexed pages"
   },
   {
     "label": "Subdomains",
     "query": "site:*.{input}",
-    "description": "Find all subdomains of the website"
+    "description": "Find all subdomains"
   },
   {
     "label": "Login Pages",
-    "query": "site:{input} inurl:login OR inurl:signin OR inurl:auth",
-    "description": "Discover login and authentication pages"
+    "query": "site:{input} (inurl:login OR inurl:signin OR inurl:signup OR inurl:register OR inurl:auth)",
+    "description": "Login and auth pages"
+  },
+  {
+    "label": "SQL Errors",
+    "query": "site:{input} (intext:\"sql syntax near\" OR intext:\"syntax error\" OR intext:\"mysql_\" OR intext:\"Warning: mysql\")",
+    "description": "Find SQL error messages"
+  },
+  {
+    "label": "Documents",
+    "query": "site:{input} (ext:doc OR ext:docx OR ext:pdf OR ext:xls OR ext:xlsx OR ext:txt)",
+    "description": "Find document files"
+  },
+  {
+    "label": "API Keys Exposed",
+    "query": "site:{input} (intext:\"api_key\" OR intext:\"apiToken\" OR intext:\"access_token\" OR intext:\"secret_key\")",
+    "description": "Search for exposed API keys"
+  },
+  {
+    "label": "Config Files",
+    "query": "site:{input} (inurl:config OR inurl:configuration OR inurl:settings) (ext:xml OR ext:json OR ext:yaml OR ext:ini)",
+    "description": "Configuration files"
   },
   {
     "label": "Directory Listings",
-    "query": "site:{input} intitle:\"index of\"",
-    "description": "Find exposed directory listings"
+    "query": "site:{input} (intitle:\"index of /\" OR intitle:\"index of\")",
+    "description": "Exposed directories"
+  },
+  {
+    "label": "Backup Files",
+    "query": "site:{input} (inurl:backup OR inurl:bak OR inurl:old) (ext:zip OR ext:rar OR ext:tar OR ext:gz OR ext:bak)",
+    "description": "Find backup files"
+  },
+  {
+    "label": "Git Repositories",
+    "query": "site:{input} (inurl:.git OR inurl:.svn OR inurl:gitlab OR inurl:github)",
+    "description": "Exposed source control"
+  },
+  {
+    "label": "Error Messages",
+    "query": "site:{input} (intext:\"error\" OR intext:\"warning\" OR intext:\"exception\" OR intext:\"fatal error\")",
+    "description": "Error and debug info"
+  },
+  {
+    "label": "Database Admin",
+    "query": "site:{input} (inurl:phpmyadmin OR inurl:adminer OR inurl:dbadmin OR inurl:database)",
+    "description": "Database interfaces"
+  },
+  {
+    "label": "Cloud Storage",
+    "query": "site:{input} (inurl:s3.amazonaws.com OR inurl:storage.googleapis.com OR inurl:azure OR intext:\"bucket\")",
+    "description": "Cloud storage buckets"
+  },
+  {
+    "label": "Upload Forms",
+    "query": "site:{input} (inurl:upload OR inurl:filemanager OR inurl:uploads)",
+    "description": "File upload pages"
+  },
+  {
+    "label": "Old/Deprecated",
+    "query": "site:{input} (inurl:old OR inurl:deprecated OR inurl:v1 OR inurl:legacy OR inurl:archive)",
+    "description": "Old versions and archives"
+  },
+  {
+    "label": "Code Comments",
+    "query": "site:{input} (inurl:js OR ext:js) (intext:\"TODO\" OR intext:\"FIXME\" OR intext:\"password\" OR intext:\"token\")",
+    "description": "Find TODO and secrets in JS"
+  },
+  {
+    "label": "Checkout/Payment",
+    "query": "site:{input} (inurl:checkout OR inurl:payment OR inurl:cart OR inurl:order)",
+    "description": "Payment and order pages"
+  },
+  {
+    "label": "Confidential Docs",
+    "query": "site:{input} (intext:\"confidential\" OR intext:\"internal use only\" OR intext:\"do not share\")",
+    "description": "Confidential documents"
+  },
+  {
+    "label": "Password Reset",
+    "query": "site:{input} (inurl:reset OR inurl:forgotpassword OR inurl:recover OR inurl:passwordreset)",
+    "description": "Password recovery pages"
+  },
+  {
+    "label": "Debug/Dev Tools",
+    "query": "site:{input} (inurl:devtools OR inurl:debug OR inurl:console OR inurl:monitoring)",
+    "description": "Developer tools"
+  },
+  {
+    "label": "Test/Sample Data",
+    "query": "site:{input} (intext:\"dummy data\" OR intext:\"sample data\" OR intext:\"test data\" OR intext:\"lorem ipsum\")",
+    "description": "Test and placeholder data"
+  },
+  {
+    "label": "CMS Versions",
+    "query": "site:{input} (intext:\"powered by WordPress\" OR intext:\"powered by Joomla\" OR intext:\"powered by Drupal\")",
+    "description": "CMS platform detection"
+  },
+  {
+    "label": "Shell Upload",
+    "query": "site:{input} (inurl:shell OR inurl:cmd OR inurl:root OR inurl:upload) (ext:php OR ext:asp)",
+    "description": "Potential shell uploads"
+  },
+  {
+    "label": "Path Traversal",
+    "query": "site:{input} (inurl:../ OR inurl:%2e%2e%2f OR inurl:/../../)",
+    "description": "Path traversal vulnerabilities"
+  },
+  {
+    "label": "Robots & Sitemaps",
+    "query": "site:{input} (inurl:robots.txt OR inurl:sitemap.xml)",
+    "description": "Robots and sitemap files"
+  },
+  {
+    "label": "Contact Info",
+    "query": "site:{input} (intext:\"contact us\" OR intext:\"support\" OR intext:\"@{input}\")",
+    "description": "Contact information"
   },
   {
     "label": "Email Addresses",
     "query": "site:{input} intext:@{input}",
-    "description": "Find email addresses on the domain"
-  },
-  {
-    "label": "Contact Pages",
-    "query": "site:{input} inurl:contact OR intitle:contact",
-    "description": "Locate contact information pages"
-  },
-  {
-    "label": "Sitemap Files",
-    "query": "site:{input} filetype:xml inurl:sitemap",
-    "description": "Find XML sitemap files"
-  },
-  {
-    "label": "Robots.txt",
-    "query": "site:{input} inurl:robots.txt",
-    "description": "View robots.txt file"
-  },
-  {
-    "label": "API Endpoints",
-    "query": "site:{input} inurl:api OR intitle:api",
-    "description": "Find API documentation or endpoints"
-  },
-  {
-    "label": "WordPress Sites",
-    "query": "site:{input} inurl:wp-content OR inurl:wp-admin",
-    "description": "Identify WordPress installation"
-  },
-  {
-    "label": "Search Functionality",
-    "query": "site:{input} inurl:search OR inurl:query",
-    "description": "Find search pages on the site"
-  },
-  {
-    "label": "Error Pages",
-    "query": "site:{input} intitle:\"404\" OR intitle:\"error\"",
-    "description": "Locate error pages"
+    "description": "Find email addresses"
   }
 ]

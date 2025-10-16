@@ -147,25 +147,22 @@ export default function DorkingPage() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 glass rounded-full">
+        <div className="text-center mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass rounded-full">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">Google Dorking Assistant</span>
           </div>
-          <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-white via-primary to-accent bg-clip-text text-transparent">
-            Discover Hidden Data
-          </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Advanced Google search queries to find exactly what you're looking for
           </p>
         </div>
 
         {/* Search Input */}
-        <div className="mb-12 animate-slide-up">
-          <div className="glass-strong rounded-2xl p-8 shadow-2xl">
-            <div className="flex gap-4 mb-6">
+        <div className="mb-8 animate-slide-up">
+          <div className="glass-strong rounded-xl p-6 shadow-2xl">
+            <div className="flex gap-4 mb-5">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <input
@@ -174,23 +171,23 @@ export default function DorkingPage() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={selectedCategory?.inputPlaceholder || "Enter website, name, or search term..."}
-                  className="w-full bg-background/50 border border-border rounded-xl pl-12 pr-4 py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  className="w-full bg-background/50 border border-border rounded-xl pl-12 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
               </div>
             </div>
 
             {/* Category Buttons */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => handleCategoryClick(category)}
-                  className={`group glass hover:glass-strong rounded-xl p-4 text-center transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/10 ${
+                  className={`group glass hover:glass-strong rounded-lg p-3 text-center transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/10 ${
                     selectedCategory?.id === category.id ? 'ring-2 ring-primary bg-primary/10' : ''
                   }`}
                 >
-                  <div className="text-3xl mb-2">{category.icon}</div>
-                  <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                  <div className="text-2xl mb-1.5">{category.icon}</div>
+                  <div className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">
                     {category.name}
                   </div>
                 </button>

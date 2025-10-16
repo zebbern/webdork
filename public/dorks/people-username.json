@@ -1,62 +1,77 @@
 [
   {
-    "label": "Social Media Profiles",
-    "query": "{input} site:linkedin.com OR site:twitter.com OR site:facebook.com OR site:instagram.com",
-    "description": "Find social media profiles for the person"
+    "label": "Basic Search",
+    "query": "{input}",
+    "description": "Simple exact search"
   },
   {
-    "label": "LinkedIn Profile",
-    "query": "{input} site:linkedin.com",
-    "description": "Search for professional LinkedIn profile"
+    "label": "All Sites Wildcard",
+    "query": "site:*.* {input}",
+    "description": "Search across all websites"
+  },
+  {
+    "label": "LinkedIn Profile Direct",
+    "query": "site:linkedin.com/in/ \"{input}\"",
+    "description": "Find LinkedIn profile page"
+  },
+  {
+    "label": "LinkedIn All",
+    "query": "site:linkedin.com {input}",
+    "description": "Search all LinkedIn pages"
+  },
+  {
+    "label": "Instagram Profile",
+    "query": "site:instagram.com \"{input}\" -inurl:user",
+    "description": "Locate Instagram account"
+  },
+  {
+    "label": "Facebook Search",
+    "query": "site:facebook.com {input}",
+    "description": "Find Facebook profile"
+  },
+  {
+    "label": "Twitter/X Search",
+    "query": "site:twitter.com {input}",
+    "description": "Search Twitter profile"
   },
   {
     "label": "GitHub Profile",
-    "query": "{input} site:github.com",
-    "description": "Find GitHub repositories and contributions"
-  },
-  {
-    "label": "Twitter/X Account",
-    "query": "{input} site:twitter.com OR site:x.com",
-    "description": "Locate Twitter/X social media account"
-  },
-  {
-    "label": "Facebook Profile",
-    "query": "{input} site:facebook.com",
-    "description": "Search Facebook for user profile"
-  },
-  {
-    "label": "Instagram Account",
-    "query": "{input} site:instagram.com",
-    "description": "Find Instagram profile"
+    "query": "site:github.com {input}",
+    "description": "Find GitHub repositories"
   },
   {
     "label": "Reddit Activity",
-    "query": "{input} site:reddit.com",
-    "description": "Search Reddit posts and comments"
+    "query": "site:reddit.com {input}",
+    "description": "Search Reddit posts"
   },
   {
-    "label": "Stack Overflow Profile",
-    "query": "{input} site:stackoverflow.com",
-    "description": "Find developer activity on Stack Overflow"
+    "label": "Contact Info",
+    "query": "\"{input}\" (phone|contact|mobile|cell)",
+    "description": "Find contact details"
   },
   {
-    "label": "Medium Articles",
-    "query": "{input} site:medium.com",
-    "description": "Search for Medium blog posts"
+    "label": "Email Addresses",
+    "query": "\"{input}\" email OR @",
+    "description": "Search for emails"
   },
   {
-    "label": "YouTube Channel",
-    "query": "{input} site:youtube.com",
-    "description": "Find YouTube channel or videos"
+    "label": "In URL Search",
+    "query": "inurl:{input}",
+    "description": "Name in URL"
   },
   {
-    "label": "Contact Information",
-    "query": "{input} contact OR email OR phone",
-    "description": "Search for contact details"
+    "label": "In Text Search",
+    "query": "intext:\"{input}\"",
+    "description": "Name in page text"
+  },
+  {
+    "label": "Related Profiles",
+    "query": "related:\"{input}\"",
+    "description": "Find related sites"
   },
   {
     "label": "Resume/CV",
-    "query": "{input} filetype:pdf resume OR cv",
-    "description": "Find professional resume or CV documents"
+    "query": "\"{input}\" filetype:pdf resume OR cv",
+    "description": "Find professional docs"
   }
 ]

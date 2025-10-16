@@ -1,52 +1,102 @@
 [
   {
-    "label": "All Social Platforms",
-    "query": "{input} site:linkedin.com OR site:twitter.com OR site:facebook.com OR site:instagram.com OR site:tiktok.com",
-    "description": "Search across major social media platforms"
+    "label": "@Facebook",
+    "query": "@Facebook {input}",
+    "description": "Facebook mentions"
   },
   {
-    "label": "Professional Networks",
-    "query": "{input} site:linkedin.com OR site:xing.com",
-    "description": "Search professional networking sites"
+    "label": "@Instagram",
+    "query": "@Instagram {input}",
+    "description": "Instagram mentions"
   },
   {
-    "label": "Photo Sharing",
-    "query": "{input} site:instagram.com OR site:flickr.com OR site:pinterest.com",
-    "description": "Find photos and images on sharing platforms"
+    "label": "@Twitter",
+    "query": "@Twitter {input}",
+    "description": "Twitter mentions"
   },
   {
-    "label": "Video Platforms",
-    "query": "{input} site:youtube.com OR site:vimeo.com OR site:tiktok.com",
-    "description": "Search video sharing platforms"
+    "label": "@LinkedIn",
+    "query": "@LinkedIn {input}",
+    "description": "LinkedIn mentions"
   },
   {
-    "label": "Messaging Apps",
-    "query": "{input} site:telegram.org OR site:discord.com",
-    "description": "Find public groups or channels"
+    "label": "@TikTok",
+    "query": "@TikTok {input}",
+    "description": "TikTok mentions"
   },
   {
-    "label": "Forums & Communities",
-    "query": "{input} site:reddit.com OR site:quora.com",
-    "description": "Search forum posts and community discussions"
+    "label": "@Snapchat",
+    "query": "@Snapchat {input}",
+    "description": "Snapchat mentions"
   },
   {
-    "label": "Dating Profiles",
-    "query": "{input} site:tinder.com OR site:match.com OR site:okcupid.com",
-    "description": "Search dating platforms"
+    "label": "@Pinterest",
+    "query": "@Pinterest {input}",
+    "description": "Pinterest mentions"
   },
   {
-    "label": "Business Pages",
-    "query": "{input} site:facebook.com/pages OR site:linkedin.com/company",
-    "description": "Find business pages on social platforms"
+    "label": "@YouTube",
+    "query": "@YouTube {input}",
+    "description": "YouTube mentions"
   },
   {
-    "label": "Twitter Lists",
-    "query": "{input} site:twitter.com/i/lists",
-    "description": "Find Twitter lists containing the username"
+    "label": "@Reddit",
+    "query": "@Reddit {input}",
+    "description": "Reddit mentions"
   },
   {
-    "label": "Instagram Hashtags",
-    "query": "{input} site:instagram.com/explore/tags",
-    "description": "Search Instagram hashtags"
+    "label": "@Telegram",
+    "query": "@Telegram {input}",
+    "description": "Telegram mentions"
+  },
+  {
+    "label": "@GitHub",
+    "query": "@GitHub {input}",
+    "description": "GitHub mentions"
+  },
+  {
+    "label": "@Discord",
+    "query": "@Discord {input}",
+    "description": "Discord mentions"
+  },
+  {
+    "label": "@Twitch",
+    "query": "@Twitch {input}",
+    "description": "Twitch mentions"
+  },
+  {
+    "label": "@Medium",
+    "query": "@Medium {input}",
+    "description": "Medium mentions"
+  },
+  {
+    "label": "@Quora",
+    "query": "@Quora {input}",
+    "description": "Quora mentions"
+  },
+  {
+    "label": "LinkedIn Site",
+    "query": "site:linkedin.com {input}",
+    "description": "LinkedIn profiles"
+  },
+  {
+    "label": "Instagram Site",
+    "query": "site:instagram.com \"{input}\" -inurl:user",
+    "description": "Instagram profiles"
+  },
+  {
+    "label": "Facebook Site",
+    "query": "site:facebook.com {input}",
+    "description": "Facebook profiles"
+  },
+  {
+    "label": "Twitter Site",
+    "query": "site:twitter.com {input}",
+    "description": "Twitter profiles"
+  },
+  {
+    "label": "All Major Platforms",
+    "query": "{input} site:linkedin.com OR site:twitter.com OR site:facebook.com OR site:instagram.com",
+    "description": "Search across all major social platforms"
   }
 ]
