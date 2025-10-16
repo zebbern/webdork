@@ -1,0 +1,252 @@
+[
+  {
+    "label": "GitHub - User Repos",
+    "query": "site:github.com/{input}",
+    "description": "GitHub user repositories"
+  },
+  {
+    "label": "GitHub - Search Code",
+    "query": "site:github.com \"{input}\" (language:javascript OR language:python OR language:java)",
+    "description": "Search GitHub code"
+  },
+  {
+    "label": "GitHub - API Keys",
+    "query": "site:github.com \"{input}\" (api_key OR apikey OR api-key)",
+    "description": "GitHub exposed API keys"
+  },
+  {
+    "label": "GitHub - Passwords",
+    "query": "site:github.com \"{input}\" (password OR passwd OR pwd)",
+    "description": "GitHub exposed passwords"
+  },
+  {
+    "label": "GitHub - AWS Keys",
+    "query": "site:github.com \"{input}\" (AKIA OR aws_access_key_id)",
+    "description": "GitHub AWS credentials"
+  },
+  {
+    "label": "GitHub - Private Keys",
+    "query": "site:github.com \"{input}\" (BEGIN RSA PRIVATE KEY OR BEGIN PRIVATE KEY)",
+    "description": "GitHub private keys"
+  },
+  {
+    "label": "GitHub - Database Creds",
+    "query": "site:github.com \"{input}\" (DB_PASSWORD OR DATABASE_PASSWORD)",
+    "description": "GitHub database credentials"
+  },
+  {
+    "label": "GitHub - Env Files",
+    "query": "site:github.com \"{input}\" filename:.env",
+    "description": "GitHub .env files"
+  },
+  {
+    "label": "GitHub - Config Files",
+    "query": "site:github.com \"{input}\" (filename:config.json OR filename:settings.json)",
+    "description": "GitHub config files"
+  },
+  {
+    "label": "GitHub - SSH Keys",
+    "query": "site:github.com \"{input}\" (filename:id_rsa OR filename:id_dsa)",
+    "description": "GitHub SSH keys"
+  },
+  {
+    "label": "GitHub - Tokens",
+    "query": "site:github.com \"{input}\" (token OR oauth OR secret)",
+    "description": "GitHub tokens and secrets"
+  },
+  {
+    "label": "GitHub - Docker Secrets",
+    "query": "site:github.com \"{input}\" filename:docker-compose.yml (password OR secret)",
+    "description": "GitHub Docker secrets"
+  },
+  {
+    "label": "GitHub - SQL Files",
+    "query": "site:github.com \"{input}\" ext:sql",
+    "description": "GitHub SQL files"
+  },
+  {
+    "label": "GitHub - Kubernetes Secrets",
+    "query": "site:github.com \"{input}\" (kind:Secret OR apiVersion:v1)",
+    "description": "GitHub k8s secrets"
+  },
+  {
+    "label": "GitHub - Terraform",
+    "query": "site:github.com \"{input}\" (ext:tf OR ext:tfvars)",
+    "description": "GitHub Terraform files"
+  },
+  {
+    "label": "GitLab - User Repos",
+    "query": "site:gitlab.com/{input}",
+    "description": "GitLab user repositories"
+  },
+  {
+    "label": "GitLab - Code Search",
+    "query": "site:gitlab.com \"{input}\" (password OR api_key OR secret)",
+    "description": "GitLab code search"
+  },
+  {
+    "label": "GitLab - Credentials",
+    "query": "site:gitlab.com \"{input}\" (credentials OR auth OR token)",
+    "description": "GitLab credentials"
+  },
+  {
+    "label": "GitLab - Config Files",
+    "query": "site:gitlab.com \"{input}\" (filename:config OR filename:.env)",
+    "description": "GitLab config files"
+  },
+  {
+    "label": "GitLab - CI/CD Variables",
+    "query": "site:gitlab.com \"{input}\" filename:.gitlab-ci.yml (variables OR secret)",
+    "description": "GitLab CI/CD secrets"
+  },
+  {
+    "label": "Bitbucket - Repos",
+    "query": "site:bitbucket.org/{input}",
+    "description": "Bitbucket repositories"
+  },
+  {
+    "label": "Bitbucket - Code Search",
+    "query": "site:bitbucket.org \"{input}\" (password OR api_key)",
+    "description": "Bitbucket code search"
+  },
+  {
+    "label": "Bitbucket - Credentials",
+    "query": "site:bitbucket.org \"{input}\" (credentials OR token OR secret)",
+    "description": "Bitbucket credentials"
+  },
+  {
+    "label": "SourceForge",
+    "query": "site:sourceforge.net \"{input}\"",
+    "description": "SourceForge projects"
+  },
+  {
+    "label": "Gitea Instances",
+    "query": "\"{input}\" (inurl:/explore/repos OR intitle:\"Gitea\")",
+    "description": "Gitea repositories"
+  },
+  {
+    "label": "Gogs Instances",
+    "query": "\"{input}\" (inurl:/explore/repos OR intitle:\"Gogs\")",
+    "description": "Gogs repositories"
+  },
+  {
+    "label": "NPM Packages",
+    "query": "site:npmjs.com \"{input}\"",
+    "description": "NPM package registry"
+  },
+  {
+    "label": "PyPI Packages",
+    "query": "site:pypi.org \"{input}\"",
+    "description": "Python package index"
+  },
+  {
+    "label": "RubyGems",
+    "query": "site:rubygems.org \"{input}\"",
+    "description": "Ruby gem packages"
+  },
+  {
+    "label": "NuGet Packages",
+    "query": "site:nuget.org \"{input}\"",
+    "description": "NuGet package registry"
+  },
+  {
+    "label": "Maven Central",
+    "query": "site:mvnrepository.com \"{input}\"",
+    "description": "Maven package repository"
+  },
+  {
+    "label": "Packagist - PHP",
+    "query": "site:packagist.org \"{input}\"",
+    "description": "PHP package registry"
+  },
+  {
+    "label": "Crates.io - Rust",
+    "query": "site:crates.io \"{input}\"",
+    "description": "Rust package registry"
+  },
+  {
+    "label": "Go Packages",
+    "query": "site:pkg.go.dev \"{input}\"",
+    "description": "Go package index"
+  },
+  {
+    "label": "Docker Hub",
+    "query": "site:hub.docker.com \"{input}\"",
+    "description": "Docker container images"
+  },
+  {
+    "label": "GitHub Container Registry",
+    "query": "site:ghcr.io \"{input}\"",
+    "description": "GitHub container registry"
+  },
+  {
+    "label": "Stack Overflow Code",
+    "query": "site:stackoverflow.com \"{input}\" (password OR api_key OR credentials)",
+    "description": "Stack Overflow code snippets"
+  },
+  {
+    "label": "CodeProject",
+    "query": "site:codeproject.com \"{input}\"",
+    "description": "CodeProject articles"
+  },
+  {
+    "label": "HackerOne Reports",
+    "query": "site:hackerone.com/reports \"{input}\"",
+    "description": "HackerOne bug reports"
+  },
+  {
+    "label": "Bugcrowd Disclosures",
+    "query": "site:bugcrowd.com \"{input}\"",
+    "description": "Bugcrowd disclosures"
+  },
+  {
+    "label": "Exploit-DB",
+    "query": "site:exploit-db.com \"{input}\"",
+    "description": "Exploit database"
+  },
+  {
+    "label": "PacketStorm Security",
+    "query": "site:packetstormsecurity.com \"{input}\"",
+    "description": "PacketStorm exploits"
+  },
+  {
+    "label": "CVE Details",
+    "query": "site:cvedetails.com \"{input}\"",
+    "description": "CVE vulnerability details"
+  },
+  {
+    "label": "NVD Database",
+    "query": "site:nvd.nist.gov \"{input}\"",
+    "description": "National Vulnerability Database"
+  },
+  {
+    "label": "Security Focus",
+    "query": "site:securityfocus.com \"{input}\"",
+    "description": "SecurityFocus vulnerabilities"
+  },
+  {
+    "label": "GitHub Security Advisories",
+    "query": "site:github.com/advisories \"{input}\"",
+    "description": "GitHub security advisories"
+  },
+  {
+    "label": "Snyk Vulnerabilities",
+    "query": "site:snyk.io/vuln \"{input}\"",
+    "description": "Snyk vulnerability database"
+  },
+  {
+    "label": "OSS Index",
+    "query": "site:ossindex.sonatype.org \"{input}\"",
+    "description": "Open source security index"
+  },
+  {
+    "label": "GitHub Trending",
+    "query": "site:github.com/trending \"{input}\"",
+    "description": "GitHub trending repos"
+  },
+  {
+    "label": "GitHub Topics",
+    "query": "site:github.com/topics \"{input}\"",
+    "description": "GitHub topic collections"
+  }
+]

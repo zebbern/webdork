@@ -1,0 +1,257 @@
+[
+  {
+    "label": "AWS S3 Buckets - Generic",
+    "query": "site:s3.amazonaws.com \"{input}\"",
+    "description": "AWS S3 bucket search"
+  },
+  {
+    "label": "AWS S3 - Open Buckets",
+    "query": "site:s3.amazonaws.com intitle:\"Index of /\" \"{input}\"",
+    "description": "Open S3 directory listings"
+  },
+  {
+    "label": "AWS S3 - Backup Files",
+    "query": "site:s3.amazonaws.com (backup OR dump OR old) \"{input}\"",
+    "description": "S3 backup files"
+  },
+  {
+    "label": "AWS S3 - Credentials",
+    "query": "site:s3.amazonaws.com (password OR credentials OR secret OR api_key) \"{input}\"",
+    "description": "S3 credentials exposure"
+  },
+  {
+    "label": "AWS S3 - Database Dumps",
+    "query": "site:s3.amazonaws.com (ext:sql OR ext:db OR ext:sqlite) \"{input}\"",
+    "description": "S3 database files"
+  },
+  {
+    "label": "AWS S3 - Config Files",
+    "query": "site:s3.amazonaws.com (ext:config OR ext:conf OR ext:env) \"{input}\"",
+    "description": "S3 configuration files"
+  },
+  {
+    "label": "AWS S3 - Logs",
+    "query": "site:s3.amazonaws.com ext:log \"{input}\"",
+    "description": "S3 log files"
+  },
+  {
+    "label": "Google Cloud Storage",
+    "query": "site:storage.googleapis.com \"{input}\"",
+    "description": "Google Cloud Storage buckets"
+  },
+  {
+    "label": "GCS - Open Buckets",
+    "query": "site:storage.googleapis.com intitle:\"Index of\" \"{input}\"",
+    "description": "Open GCS buckets"
+  },
+  {
+    "label": "GCS - Backup Files",
+    "query": "site:storage.googleapis.com (backup OR dump OR archive) \"{input}\"",
+    "description": "GCS backup files"
+  },
+  {
+    "label": "GCS - Credentials",
+    "query": "site:storage.googleapis.com (password OR credentials OR key) \"{input}\"",
+    "description": "GCS credentials"
+  },
+  {
+    "label": "Azure Blob Storage",
+    "query": "site:blob.core.windows.net \"{input}\"",
+    "description": "Azure Blob storage"
+  },
+  {
+    "label": "Azure - Open Containers",
+    "query": "site:blob.core.windows.net intitle:\"Index of\" \"{input}\"",
+    "description": "Open Azure containers"
+  },
+  {
+    "label": "Azure - Backup Files",
+    "query": "site:blob.core.windows.net (backup OR dump) \"{input}\"",
+    "description": "Azure backup files"
+  },
+  {
+    "label": "Azure - Config Files",
+    "query": "site:blob.core.windows.net (ext:config OR ext:json OR ext:xml) \"{input}\"",
+    "description": "Azure config files"
+  },
+  {
+    "label": "DigitalOcean Spaces",
+    "query": "site:digitaloceanspaces.com \"{input}\"",
+    "description": "DigitalOcean Spaces"
+  },
+  {
+    "label": "DigitalOcean - Open Spaces",
+    "query": "site:digitaloceanspaces.com intitle:\"Index of\" \"{input}\"",
+    "description": "Open DO Spaces"
+  },
+  {
+    "label": "Wasabi Storage",
+    "query": "site:wasabisys.com \"{input}\"",
+    "description": "Wasabi cloud storage"
+  },
+  {
+    "label": "Backblaze B2",
+    "query": "site:backblazeb2.com \"{input}\"",
+    "description": "Backblaze B2 storage"
+  },
+  {
+    "label": "Alibaba Cloud OSS",
+    "query": "site:aliyuncs.com \"{input}\"",
+    "description": "Alibaba Cloud storage"
+  },
+  {
+    "label": "Dropbox Public",
+    "query": "site:dropbox.com/s/ \"{input}\"",
+    "description": "Public Dropbox links"
+  },
+  {
+    "label": "Dropbox - Shared Files",
+    "query": "site:dl.dropboxusercontent.com \"{input}\"",
+    "description": "Dropbox shared files"
+  },
+  {
+    "label": "Google Drive - Public",
+    "query": "site:drive.google.com/file/d/ \"{input}\"",
+    "description": "Public Google Drive files"
+  },
+  {
+    "label": "Google Drive - Folders",
+    "query": "site:drive.google.com/drive/folders \"{input}\"",
+    "description": "Google Drive folders"
+  },
+  {
+    "label": "OneDrive - Public",
+    "query": "site:1drv.ms \"{input}\"",
+    "description": "Public OneDrive links"
+  },
+  {
+    "label": "OneDrive - Shared",
+    "query": "site:onedrive.live.com \"{input}\"",
+    "description": "OneDrive shared files"
+  },
+  {
+    "label": "Box - Public",
+    "query": "site:app.box.com \"{input}\"",
+    "description": "Box public files"
+  },
+  {
+    "label": "iCloud - Public",
+    "query": "site:icloud.com \"{input}\"",
+    "description": "iCloud shared files"
+  },
+  {
+    "label": "AWS CloudFront",
+    "query": "site:cloudfront.net \"{input}\"",
+    "description": "CloudFront distributions"
+  },
+  {
+    "label": "Cloudflare CDN",
+    "query": "site:cloudflarecdn.com \"{input}\"",
+    "description": "Cloudflare CDN files"
+  },
+  {
+    "label": "Firebase Storage",
+    "query": "site:firebasestorage.googleapis.com \"{input}\"",
+    "description": "Firebase storage"
+  },
+  {
+    "label": "Heroku Assets",
+    "query": "site:herokuapp.com \"{input}\"",
+    "description": "Heroku hosted files"
+  },
+  {
+    "label": "Netlify Assets",
+    "query": "site:netlify.app \"{input}\"",
+    "description": "Netlify hosted files"
+  },
+  {
+    "label": "Vercel Assets",
+    "query": "site:vercel.app \"{input}\"",
+    "description": "Vercel hosted files"
+  },
+  {
+    "label": "GitHub Pages",
+    "query": "site:github.io \"{input}\"",
+    "description": "GitHub Pages sites"
+  },
+  {
+    "label": "GitLab Pages",
+    "query": "site:gitlab.io \"{input}\"",
+    "description": "GitLab Pages sites"
+  },
+  {
+    "label": "Bitbucket Pages",
+    "query": "site:bitbucket.io \"{input}\"",
+    "description": "Bitbucket Pages sites"
+  },
+  {
+    "label": "WeTransfer Links",
+    "query": "site:wetransfer.com \"{input}\"",
+    "description": "WeTransfer shared files"
+  },
+  {
+    "label": "Mega.nz Shares",
+    "query": "site:mega.nz \"{input}\"",
+    "description": "Mega shared files"
+  },
+  {
+    "label": "MediaFire Files",
+    "query": "site:mediafire.com \"{input}\"",
+    "description": "MediaFire uploads"
+  },
+  {
+    "label": "Pastebin",
+    "query": "site:pastebin.com \"{input}\"",
+    "description": "Pastebin entries"
+  },
+  {
+    "label": "GitHub Gists",
+    "query": "site:gist.github.com \"{input}\"",
+    "description": "GitHub Gist pastes"
+  },
+  {
+    "label": "GitLab Snippets",
+    "query": "site:gitlab.com/snippets \"{input}\"",
+    "description": "GitLab snippets"
+  },
+  {
+    "label": "JSFiddle",
+    "query": "site:jsfiddle.net \"{input}\"",
+    "description": "JSFiddle code snippets"
+  },
+  {
+    "label": "CodePen",
+    "query": "site:codepen.io \"{input}\"",
+    "description": "CodePen code examples"
+  },
+  {
+    "label": "Imgur",
+    "query": "site:imgur.com \"{input}\"",
+    "description": "Imgur image uploads"
+  },
+  {
+    "label": "Flickr",
+    "query": "site:flickr.com \"{input}\"",
+    "description": "Flickr image hosting"
+  },
+  {
+    "label": "Photobucket",
+    "query": "site:photobucket.com \"{input}\"",
+    "description": "Photobucket uploads"
+  },
+  {
+    "label": "Trello Boards",
+    "query": "site:trello.com \"{input}\"",
+    "description": "Public Trello boards"
+  },
+  {
+    "label": "Notion Pages",
+    "query": "site:notion.site \"{input}\"",
+    "description": "Public Notion pages"
+  },
+  {
+    "label": "Airtable",
+    "query": "site:airtable.com \"{input}\"",
+    "description": "Airtable shared bases"
+  }
+]

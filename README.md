@@ -6,15 +6,18 @@
 ![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite)
 ![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?logo=vercel)
 
-A comprehensive Google Dorking assistant designed for security researchers, penetration testers, and bug bounty hunters. WebDork provides 394+ professionally curated search queries across 8 specialized categories.
+A comprehensive Google Dorking assistant designed for security researchers, penetration testers, and bug bounty hunters. WebDork provides 557+ professionally curated search queries across 11 specialized categories.
 
 ## Features
 
-- **394+ Professional Dorks** - Extensively researched and tested queries
-- **8 Specialized Categories** - Organized by security testing objectives
+- **557+ Professional Dorks** - Extensively researched and tested queries
+- **11 Specialized Categories** - Organized by security testing objectives
+- **Custom Dork Builder** - Visual query builder with live preview
+- **Filter & Search** - Real-time filtering across all dorks
 - **Dynamic Query Generation** - Automatic input substitution for targeted searches
 - **Modern UI** - Clean, responsive interface built with React and Tailwind CSS
 - **One-Click Search** - Direct Google search integration
+- **Production Ready** - Error handling, loading states, and optimized performance
 - **No Backend Required** - Pure frontend application, deploy anywhere
 
 ## Categories
@@ -25,10 +28,13 @@ A comprehensive Google Dorking assistant designed for security researchers, pene
 | Social Media | 51 | Platform-specific searches across all major networks |
 | Websites | 50 | Domain reconnaissance and vulnerability discovery |
 | Admin Portals | 51 | CMS backends, control panels, and admin interfaces |
-| Files | 40 | Sensitive file types and exposed documents |
-| Sensitive Info | 40 | API keys, credentials, tokens, and secrets |
-| Vulnerabilities | 40 | SQLi, XSS, LFI, RFI, and security misconfigurations |
-| Company Research | 40 | Corporate intelligence and infrastructure mapping |
+| Files | 51 | Sensitive file types and exposed documents |
+| Sensitive Info | 51 | API keys, credentials, tokens, and secrets |
+| Vulnerabilities | 51 | SQLi, XSS, LFI, RFI, and security misconfigurations |
+| Company Research | 51 | Corporate intelligence and infrastructure mapping |
+| IoT & Smart Devices | 51 | Cameras, routers, printers, and IoT systems |
+| Cloud Storage | 51 | AWS S3, Google Cloud, Azure, and public file shares |
+| Code Repositories | 51 | GitHub, GitLab, exposed code, and vulnerabilities |
 
 ## Installation
 

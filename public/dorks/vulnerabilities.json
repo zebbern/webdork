@@ -198,5 +198,60 @@
     "label": "Default Credentials",
     "query": "site:{input} (intext:\"default password\" OR intext:\"default login\")",
     "description": "Default credential documentation"
+  },
+  {
+    "label": "Struts RCE",
+    "query": "site:{input} (ext:action OR ext:do OR inurl:\"struts\")",
+    "description": "Apache Struts vulnerabilities"
+  },
+  {
+    "label": "Spring Boot Actuator",
+    "query": "site:{input} (inurl:\"/actuator\" OR inurl:\"/health\" OR inurl:\"/env\" OR inurl:\"/trace\")",
+    "description": "Spring Boot actuator endpoints"
+  },
+  {
+    "label": "Laravel Debug Mode",
+    "query": "site:{input} (intext:\"Laravel\" AND intext:\"Whoops\")",
+    "description": "Laravel debug mode enabled"
+  },
+  {
+    "label": "Symfony Profiler",
+    "query": "site:{input} inurl:\"/_profiler\"",
+    "description": "Symfony debug profiler"
+  },
+  {
+    "label": "ASP.NET Trace",
+    "query": "site:{input} (inurl:\"trace.axd\" OR intext:\"Trace.axd\")",
+    "description": "ASP.NET trace enabled"
+  },
+  {
+    "label": "ViewState Without MAC",
+    "query": "site:{input} (intext:\"__VIEWSTATE\" -intext:\"EnableViewStateMac\")",
+    "description": "Unprotected ViewState"
+  },
+  {
+    "label": "GraphQL Introspection",
+    "query": "site:{input} (inurl:\"graphql\" OR inurl:\"graphiql\")",
+    "description": "GraphQL introspection enabled"
+  },
+  {
+    "label": "API Swagger/OpenAPI",
+    "query": "site:{input} (inurl:\"/swagger\" OR inurl:\"/api-docs\" OR inurl:\"/openapi.json\")",
+    "description": "Exposed API documentation"
+  },
+  {
+    "label": "Nginx Status Page",
+    "query": "site:{input} (inurl:\"/nginx_status\" OR intitle:\"nginx status\")",
+    "description": "Nginx status disclosure"
+  },
+  {
+    "label": "Apache Server Status",
+    "query": "site:{input} (inurl:\"/server-status\" OR intitle:\"Apache Status\")",
+    "description": "Apache server status page"
+  },
+  {
+    "label": "Clickjacking Vulnerable",
+    "query": "site:{input} -intext:\"X-Frame-Options\" (inurl:\"login\" OR inurl:\"admin\")",
+    "description": "Missing X-Frame-Options"
   }
 ]

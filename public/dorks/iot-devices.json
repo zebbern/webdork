@@ -1,0 +1,257 @@
+[
+  {
+    "label": "Webcams - Generic",
+    "query": "site:{input} (inurl:\"/view/index.shtml\" OR inurl:\"/view.shtml\")",
+    "description": "Generic webcam interfaces"
+  },
+  {
+    "label": "Webcams - Axis",
+    "query": "site:{input} (inurl:\"/axis-cgi/mjpg\" OR intitle:\"AXIS\")",
+    "description": "Axis camera systems"
+  },
+  {
+    "label": "Webcams - Panasonic",
+    "query": "site:{input} (inurl:\"ViewerFrame?Mode=\" OR intitle:\"Panasonic\")",
+    "description": "Panasonic cameras"
+  },
+  {
+    "label": "Webcams - Mobotix",
+    "query": "site:{input} (inurl:\"/control/userimage.html\" OR intitle:\"MOBOTIX\")",
+    "description": "Mobotix camera systems"
+  },
+  {
+    "label": "Webcams - Canon",
+    "query": "site:{input} (inurl:\"/view/viewer_index.shtml\" OR intitle:\"Canon\")",
+    "description": "Canon network cameras"
+  },
+  {
+    "label": "Webcams - Sony",
+    "query": "site:{input} (inurl:\"/command/inquiry.cgi\" OR intitle:\"Sony\")",
+    "description": "Sony network cameras"
+  },
+  {
+    "label": "IP Cameras - All",
+    "query": "site:{input} (intitle:\"Network Camera\" OR intitle:\"IP Camera\" OR intitle:\"webcam\")",
+    "description": "All IP camera systems"
+  },
+  {
+    "label": "DVR Systems",
+    "query": "site:{input} (inurl:\"/view/viewer_index.shtml\" OR intitle:\"DVR\" OR intitle:\"Digital Video Recorder\")",
+    "description": "DVR systems"
+  },
+  {
+    "label": "NVR Systems",
+    "query": "site:{input} (intitle:\"NVR\" OR intitle:\"Network Video Recorder\")",
+    "description": "Network video recorders"
+  },
+  {
+    "label": "Security Systems",
+    "query": "site:{input} (intitle:\"Security System\" OR intitle:\"Alarm System\")",
+    "description": "Security alarm systems"
+  },
+  {
+    "label": "Building Management",
+    "query": "site:{input} (intitle:\"Building Management\" OR intitle:\"BMS\")",
+    "description": "Building management systems"
+  },
+  {
+    "label": "HVAC Systems",
+    "query": "site:{input} (intitle:\"HVAC\" OR intitle:\"Climate Control\")",
+    "description": "HVAC control systems"
+  },
+  {
+    "label": "Printers - All",
+    "query": "site:{input} (intitle:\"Printer\" OR inurl:\"/printer\" OR inurl:\"/web/guest\")",
+    "description": "Network printers"
+  },
+  {
+    "label": "Printers - HP",
+    "query": "site:{input} (inurl:\"/hp/device/\" OR intitle:\"HP LaserJet\" OR intitle:\"HP Printer\")",
+    "description": "HP network printers"
+  },
+  {
+    "label": "Printers - Canon",
+    "query": "site:{input} (inurl:\"/catwalk/\" OR intitle:\"Canon\")",
+    "description": "Canon network printers"
+  },
+  {
+    "label": "Printers - Xerox",
+    "query": "site:{input} (inurl:\"/properties/\" OR intitle:\"Xerox\")",
+    "description": "Xerox network printers"
+  },
+  {
+    "label": "Routers - Generic",
+    "query": "site:{input} (intitle:\"Router\" OR inurl:\"/cgi-bin/\" OR intitle:\"Gateway\")",
+    "description": "Generic router interfaces"
+  },
+  {
+    "label": "Routers - Cisco",
+    "query": "site:{input} (intitle:\"Cisco\" OR inurl:\"/level/15/\")",
+    "description": "Cisco router management"
+  },
+  {
+    "label": "Routers - MikroTik",
+    "query": "site:{input} (intitle:\"RouterOS\" OR intitle:\"MikroTik\")",
+    "description": "MikroTik routers"
+  },
+  {
+    "label": "Routers - Ubiquiti",
+    "query": "site:{input} (intitle:\"UniFi\" OR intitle:\"EdgeRouter\")",
+    "description": "Ubiquiti routers"
+  },
+  {
+    "label": "Routers - Netgear",
+    "query": "site:{input} (intitle:\"NETGEAR\" OR inurl:\"/index.htm\")",
+    "description": "Netgear router interfaces"
+  },
+  {
+    "label": "Routers - TP-Link",
+    "query": "site:{input} (intitle:\"TP-LINK\" OR inurl:\"/userRpm/\")",
+    "description": "TP-Link routers"
+  },
+  {
+    "label": "Firewalls - pfSense",
+    "query": "site:{input} (intitle:\"pfSense\" OR inurl:\"/index.php?zone=\")",
+    "description": "pfSense firewalls"
+  },
+  {
+    "label": "Firewalls - SonicWall",
+    "query": "site:{input} (intitle:\"SonicWall\" OR inurl:\"/auth.html\")",
+    "description": "SonicWall firewalls"
+  },
+  {
+    "label": "Firewalls - Fortinet",
+    "query": "site:{input} (intitle:\"FortiGate\" OR intitle:\"Fortinet\")",
+    "description": "Fortinet FortiGate"
+  },
+  {
+    "label": "NAS Devices",
+    "query": "site:{input} (intitle:\"NAS\" OR intitle:\"Network Attached Storage\")",
+    "description": "NAS storage devices"
+  },
+  {
+    "label": "NAS - Synology",
+    "query": "site:{input} (intitle:\"Synology\" OR inurl:\":5000\" OR inurl:\":5001\")",
+    "description": "Synology NAS"
+  },
+  {
+    "label": "NAS - QNAP",
+    "query": "site:{input} (intitle:\"QNAP\" OR inurl:\"/cgi-bin/\")",
+    "description": "QNAP NAS"
+  },
+  {
+    "label": "Smart TVs",
+    "query": "site:{input} (intitle:\"Smart TV\" OR intitle:\"Android TV\")",
+    "description": "Smart TV interfaces"
+  },
+  {
+    "label": "Smart Speakers",
+    "query": "site:{input} (intitle:\"Alexa\" OR intitle:\"Google Home\" OR intitle:\"Smart Speaker\")",
+    "description": "Smart speaker systems"
+  },
+  {
+    "label": "Smart Lights",
+    "query": "site:{input} (intitle:\"Philips Hue\" OR intitle:\"Smart Lighting\")",
+    "description": "Smart lighting systems"
+  },
+  {
+    "label": "Smart Thermostats",
+    "query": "site:{input} (intitle:\"Nest\" OR intitle:\"Ecobee\" OR intitle:\"Smart Thermostat\")",
+    "description": "Smart thermostat systems"
+  },
+  {
+    "label": "Smart Locks",
+    "query": "site:{input} (intitle:\"Smart Lock\" OR intitle:\"August\" OR intitle:\"Yale Lock\")",
+    "description": "Smart lock systems"
+  },
+  {
+    "label": "Smart Doorbells",
+    "query": "site:{input} (intitle:\"Ring\" OR intitle:\"Video Doorbell\")",
+    "description": "Smart doorbell systems"
+  },
+  {
+    "label": "Industrial Control",
+    "query": "site:{input} (intitle:\"SCADA\" OR intitle:\"HMI\" OR intitle:\"PLC\")",
+    "description": "Industrial control systems"
+  },
+  {
+    "label": "Water Treatment",
+    "query": "site:{input} (intitle:\"Water\" AND intitle:\"Control\")",
+    "description": "Water treatment systems"
+  },
+  {
+    "label": "Power Systems",
+    "query": "site:{input} (intitle:\"Power\" OR intitle:\"UPS\" OR intitle:\"Generator\")",
+    "description": "Power management systems"
+  },
+  {
+    "label": "Solar Panels",
+    "query": "site:{input} (intitle:\"Solar\" OR intitle:\"Inverter\" OR intitle:\"Photovoltaic\")",
+    "description": "Solar panel systems"
+  },
+  {
+    "label": "Weather Stations",
+    "query": "site:{input} (intitle:\"Weather Station\" OR intitle:\"Meteorological\")",
+    "description": "Weather monitoring stations"
+  },
+  {
+    "label": "Traffic Cameras",
+    "query": "site:{input} (intitle:\"Traffic\" AND intitle:\"Camera\")",
+    "description": "Traffic monitoring cameras"
+  },
+  {
+    "label": "Parking Systems",
+    "query": "site:{input} (intitle:\"Parking\" AND intitle:\"System\")",
+    "description": "Parking management systems"
+  },
+  {
+    "label": "Access Control",
+    "query": "site:{input} (intitle:\"Access Control\" OR intitle:\"Card Reader\")",
+    "description": "Access control systems"
+  },
+  {
+    "label": "Intercom Systems",
+    "query": "site:{input} (intitle:\"Intercom\" OR intitle:\"Entry System\")",
+    "description": "Building intercom systems"
+  },
+  {
+    "label": "Elevator Systems",
+    "query": "site:{input} (intitle:\"Elevator\" OR intitle:\"Lift Control\")",
+    "description": "Elevator control systems"
+  },
+  {
+    "label": "Medical Devices",
+    "query": "site:{input} (intitle:\"Medical Device\" OR intitle:\"Patient Monitor\")",
+    "description": "Medical IoT devices"
+  },
+  {
+    "label": "Smart Meters",
+    "query": "site:{input} (intitle:\"Smart Meter\" OR intitle:\"Energy Monitor\")",
+    "description": "Smart metering systems"
+  },
+  {
+    "label": "Charging Stations",
+    "query": "site:{input} (intitle:\"EV Charging\" OR intitle:\"Electric Vehicle\")",
+    "description": "EV charging stations"
+  },
+  {
+    "label": "VoIP Phones",
+    "query": "site:{input} (intitle:\"VoIP\" OR intitle:\"IP Phone\" OR intitle:\"Cisco SPA\")",
+    "description": "VoIP phone systems"
+  },
+  {
+    "label": "Video Conferencing",
+    "query": "site:{input} (intitle:\"Video Conference\" OR intitle:\"Polycom\" OR intitle:\"Zoom Room\")",
+    "description": "Video conferencing systems"
+  },
+  {
+    "label": "Digital Signage",
+    "query": "site:{input} (intitle:\"Digital Signage\" OR intitle:\"Display System\")",
+    "description": "Digital signage displays"
+  },
+  {
+    "label": "Smart Refrigerators",
+    "query": "site:{input} (intitle:\"Smart Refrigerator\" OR intitle:\"Connected Appliance\")",
+    "description": "Smart refrigerators"
+  }
+]

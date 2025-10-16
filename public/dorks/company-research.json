@@ -198,5 +198,55 @@
     "label": "YouTube Channel",
     "query": "\"{input}\" site:youtube.com",
     "description": "Video content"
+  },
+  {
+    "label": "Twitter/X Account",
+    "query": "\"{input}\" site:twitter.com OR site:x.com",
+    "description": "Social media presence"
+  },
+  {
+    "label": "Facebook Page",
+    "query": "\"{input}\" site:facebook.com",
+    "description": "Facebook company page"
+  },
+  {
+    "label": "Instagram Account",
+    "query": "\"{input}\" site:instagram.com",
+    "description": "Instagram presence"
+  },
+  {
+    "label": "Reddit Mentions",
+    "query": "\"{input}\" site:reddit.com",
+    "description": "Reddit discussions"
+  },
+  {
+    "label": "HackerNews Mentions",
+    "query": "\"{input}\" site:news.ycombinator.com",
+    "description": "HackerNews coverage"
+  },
+  {
+    "label": "Product Hunt",
+    "query": "\"{input}\" site:producthunt.com",
+    "description": "Product Hunt listings"
+  },
+  {
+    "label": "AlternativeTo",
+    "query": "\"{input}\" site:alternativeto.net",
+    "description": "Product alternatives"
+  },
+  {
+    "label": "Wayback Machine",
+    "query": "\"{input}\" site:web.archive.org",
+    "description": "Historical snapshots"
+  },
+  {
+    "label": "Legal Documents",
+    "query": "\"{input}\" (filetype:pdf OR filetype:doc) (legal OR terms OR privacy OR agreement)",
+    "description": "Legal documentation"
+  },
+  {
+    "label": "Contact Information",
+    "query": "\"{input}\" (contact OR email OR phone OR address)",
+    "description": "Company contact details"
   }
 ]

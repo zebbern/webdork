@@ -198,5 +198,60 @@
     "label": "Basic Auth",
     "query": "site:{input} (intext:\"Authorization: Basic\" OR inurl:\"@\")",
     "description": "Basic authentication"
+  },
+  {
+    "label": "DigitalOcean Tokens",
+    "query": "site:{input} (intext:\"DIGITALOCEAN_TOKEN\" OR intext:\"DO_API_TOKEN\")",
+    "description": "DigitalOcean API tokens"
+  },
+  {
+    "label": "Cloudflare Keys",
+    "query": "site:{input} (intext:\"CLOUDFLARE_API_KEY\" OR intext:\"CF_API_KEY\")",
+    "description": "Cloudflare API keys"
+  },
+  {
+    "label": "Algolia Keys",
+    "query": "site:{input} (intext:\"ALGOLIA_API_KEY\" OR intext:\"algolia_admin_key\")",
+    "description": "Algolia search API keys"
+  },
+  {
+    "label": "Mapbox Tokens",
+    "query": "site:{input} (intext:\"pk.eyJ\" OR intext:\"MAPBOX_ACCESS_TOKEN\")",
+    "description": "Mapbox API tokens"
+  },
+  {
+    "label": "Square Keys",
+    "query": "site:{input} (intext:\"sq0atp\" OR intext:\"sq0csp\" OR intext:\"SQUARE_ACCESS_TOKEN\")",
+    "description": "Square payment keys"
+  },
+  {
+    "label": "PagerDuty Keys",
+    "query": "site:{input} (intext:\"PAGERDUTY_API_KEY\" OR intext:\"pd_api_key\")",
+    "description": "PagerDuty API keys"
+  },
+  {
+    "label": "Datadog Keys",
+    "query": "site:{input} (intext:\"DATADOG_API_KEY\" OR intext:\"DD_API_KEY\")",
+    "description": "Datadog monitoring keys"
+  },
+  {
+    "label": "New Relic Keys",
+    "query": "site:{input} (intext:\"NEW_RELIC_LICENSE_KEY\" OR intext:\"NEWRELIC_LICENSE_KEY\")",
+    "description": "New Relic license keys"
+  },
+  {
+    "label": "MongoDB URIs",
+    "query": "site:{input} (intext:\"mongodb://\" OR intext:\"mongodb+srv://\")",
+    "description": "MongoDB connection URIs"
+  },
+  {
+    "label": "Redis URLs",
+    "query": "site:{input} (intext:\"redis://\" OR intext:\"REDIS_URL\")",
+    "description": "Redis connection URLs"
+  },
+  {
+    "label": "Elasticsearch Credentials",
+    "query": "site:{input} (intext:\"ELASTICSEARCH_URL\" OR intext:\"elastic:\" OR intext:\"ES_PASSWORD\")",
+    "description": "Elasticsearch credentials"
   }
 ]

@@ -198,5 +198,60 @@
     "label": "GraphQL Schemas",
     "query": "site:{input} (ext:graphql OR ext:gql OR filename:schema.graphql)",
     "description": "GraphQL schema files"
+  },
+  {
+    "label": "Redis Configs",
+    "query": "site:{input} (filename:redis.conf OR filename:redis-cli)",
+    "description": "Redis configuration files"
+  },
+  {
+    "label": "MongoDB Configs",
+    "query": "site:{input} (filename:mongod.conf OR filename:mongo.conf)",
+    "description": "MongoDB configuration"
+  },
+  {
+    "label": "Private Keys",
+    "query": "site:{input} (ext:key OR ext:pem) (private OR rsa OR dsa OR ecdsa)",
+    "description": "Private key files"
+  },
+  {
+    "label": "JWT Secrets",
+    "query": "site:{input} (jwt OR token) (secret OR key OR signing)",
+    "description": "JWT secret keys"
+  },
+  {
+    "label": "Postman Collections",
+    "query": "site:{input} ext:json (postman OR collection) (api OR endpoint)",
+    "description": "Postman API collections"
+  },
+  {
+    "label": "Insomnia Configs",
+    "query": "site:{input} (filename:insomnia OR filename:workspace) ext:json",
+    "description": "Insomnia API workspace"
+  },
+  {
+    "label": "Core Dumps",
+    "query": "site:{input} (ext:core OR filename:core.dump OR ext:mdmp)",
+    "description": "Application crash dumps"
+  },
+  {
+    "label": "Selenium Tests",
+    "query": "site:{input} (ext:py OR ext:js) (selenium OR webdriver OR test)",
+    "description": "Selenium test files"
+  },
+  {
+    "label": "Webpack Configs",
+    "query": "site:{input} (filename:webpack.config OR filename:webpack.prod)",
+    "description": "Webpack build configs"
+  },
+  {
+    "label": "Procfiles",
+    "query": "site:{input} (filename:Procfile OR filename:procfile)",
+    "description": "Heroku process files"
+  },
+  {
+    "label": "Makefile Configs",
+    "query": "site:{input} (filename:Makefile OR filename:makefile)",
+    "description": "Build automation files"
   }
 ]
