@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, ExternalLink, Sparkles, Filter, Plus, X } from 'lucide-react';
+import { Search, ExternalLink, Sparkles, Filter, Plus, X, Trash2 } from 'lucide-react';
 
 interface DorkQuery {
   label: string;
@@ -14,6 +14,12 @@ interface Category {
   icon: string;
   inputPlaceholder: string;
   requiresInput: boolean;
+}
+
+interface DorkOperator {
+  id: string;
+  type: string;
+  value: string;
 }
 
 const categories: Category[] = [
@@ -116,12 +122,10 @@ export default function DorkingPage() {
   const [showDorkBuilder, setShowDorkBuilder] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Custom Dork Builder state
-  const [customDorkSite, setCustomDorkSite] = useState('');
-  const [customDorkInurl, setCustomDorkInurl] = useState('');
-  const [customDorkIntext, setCustomDorkIntext] = useState('');
-  const [customDorkFiletype, setCustomDorkFiletype] = useState('');
-  const [customDorkIntitle, setCustomDorkIntitle] = useState('');
+  // Enhanced Custom Dork Builder state
+  const [dorkOperators, setDorkOperators] = useState<DorkOperator[]>([
+    { id: '1', type: 'site', value: '' }
+  ]);
 
   const loadCategoryDorks = async (category: Category) => {
     setLoading(true);
@@ -174,15 +178,40 @@ export default function DorkingPage() {
     window.open(googleUrl, '_blank');
   };
 
-  // Custom Dork Builder function
+  // Enhanced Custom Dork Builder functions
+  const addOperator = () => {
+    const newId = (Math.max(...dorkOperators.map(op => parseInt(op.id)), 0) + 1).toString();
+    setDorkOperators([...dorkOperators, { id: newId, type: 'site', value: '' }]);
+  };
+
+  const removeOperator = (id: string) => {
+    if (dorkOperators.length > 1) {
+      setDorkOperators(dorkOperators.filter(op => op.id !== id));
+    }
+  };
+
+  const updateOperator = (id: string, field: 'type' | 'value', newValue: string) => {
+    setDorkOperators(dorkOperators.map(op =>
+      op.id === id ? { ...op, [field]: newValue } : op
+    ));
+  };
+
+  const clearAllOperators = () => {
+    setDorkOperators([{ id: '1', type: 'site', value: '' }]);
+  };
+
   const buildCustomDork = () => {
-    let dork = '';
-    if (customDorkSite) dork += `site:${customDorkSite} `;
-    if (customDorkInurl) dork += `inurl:${customDorkInurl} `;
-    if (customDorkIntext) dork += `intext:"${customDorkIntext}" `;
-    if (customDorkIntitle) dork += `intitle:"${customDorkIntitle}" `;
-    if (customDorkFiletype) dork += `filetype:${customDorkFiletype} `;
-    return dork.trim();
+    return dorkOperators
+      .filter(op => op.value.trim())
+      .map(op => {
+        const value = op.value.trim();
+        // Add quotes for operators that typically need them
+        if (op.type === 'intext' || op.type === 'intitle') {
+          return `${op.type}:"${value}"`;
+        }
+        return `${op.type}:${value}`;
+      })
+      .join(' ');
   };
 
   const executeCustomDork = () => {
@@ -190,6 +219,32 @@ export default function DorkingPage() {
     if (customQuery) {
       handleSearch(customQuery);
     }
+  };
+
+  const loadPreset = (preset: 'exposed-files' | 'admin-login' | 'credentials' | 'database') => {
+    const presets = {
+      'exposed-files': [
+        { id: '1', type: 'site', value: '' },
+        { id: '2', type: 'intitle', value: 'index of' },
+        { id: '3', type: 'filetype', value: 'pdf' }
+      ],
+      'admin-login': [
+        { id: '1', type: 'site', value: '' },
+        { id: '2', type: 'inurl', value: 'admin' },
+        { id: '3', type: 'intitle', value: 'login' }
+      ],
+      'credentials': [
+        { id: '1', type: 'site', value: '' },
+        { id: '2', type: 'intext', value: 'password' },
+        { id: '3', type: 'filetype', value: 'env' }
+      ],
+      'database': [
+        { id: '1', type: 'site', value: '' },
+        { id: '2', type: 'filetype', value: 'sql' },
+        { id: '3', type: 'intext', value: 'dump' }
+      ]
+    };
+    setDorkOperators(presets[preset]);
   };
 
   // Filter dorks based on search input
@@ -289,62 +344,120 @@ export default function DorkingPage() {
               </button>
             </div>
 
-            {/* Custom Dork Builder */}
+            {/* Enhanced Custom Dork Builder */}
             {showDorkBuilder && (
-              <div className="mt-4 glass-strong rounded-lg p-4 space-y-3 animate-slide-up">
-                <div className="flex items-center justify-between mb-2">
+              <div className="mt-4 glass-strong rounded-lg p-4 space-y-4 animate-slide-up">
+                <div className="flex items-center justify-between">
                   <h3 className="text-sm font-semibold text-foreground">Custom Dork Builder</h3>
-                  <button onClick={() => setShowDorkBuilder(false)} className="text-muted-foreground hover:text-foreground">
+                  <button onClick={() => setShowDorkBuilder(false)} className="text-muted-foreground hover:text-foreground transition-colors">
                     <X className="w-4 h-4" />
                   </button>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <input
-                    type="text"
-                    value={customDorkSite}
-                    onChange={(e) => setCustomDorkSite(e.target.value)}
-                    placeholder="site: example.com"
-                    className="bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <input
-                    type="text"
-                    value={customDorkInurl}
-                    onChange={(e) => setCustomDorkInurl(e.target.value)}
-                    placeholder="inurl: admin"
-                    className="bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <input
-                    type="text"
-                    value={customDorkIntext}
-                    onChange={(e) => setCustomDorkIntext(e.target.value)}
-                    placeholder="intext: password"
-                    className="bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <input
-                    type="text"
-                    value={customDorkIntitle}
-                    onChange={(e) => setCustomDorkIntitle(e.target.value)}
-                    placeholder="intitle: index of"
-                    className="bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <input
-                    type="text"
-                    value={customDorkFiletype}
-                    onChange={(e) => setCustomDorkFiletype(e.target.value)}
-                    placeholder="filetype: pdf"
-                    className="bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
+
+                {/* Quick Presets */}
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs text-muted-foreground">Quick Presets:</span>
+                  <button
+                    onClick={() => loadPreset('exposed-files')}
+                    className="text-xs px-2 py-1 glass hover:glass-strong rounded transition-all"
+                  >
+                    Exposed Files
+                  </button>
+                  <button
+                    onClick={() => loadPreset('admin-login')}
+                    className="text-xs px-2 py-1 glass hover:glass-strong rounded transition-all"
+                  >
+                    Admin Login
+                  </button>
+                  <button
+                    onClick={() => loadPreset('credentials')}
+                    className="text-xs px-2 py-1 glass hover:glass-strong rounded transition-all"
+                  >
+                    Credentials
+                  </button>
+                  <button
+                    onClick={() => loadPreset('database')}
+                    className="text-xs px-2 py-1 glass hover:glass-strong rounded transition-all"
+                  >
+                    Database
+                  </button>
                 </div>
-                <div className="flex items-center gap-2 mt-3">
-                  <div className="flex-1 bg-background/50 rounded-lg px-3 py-2 text-sm text-primary font-mono overflow-x-auto">
-                    {buildCustomDork() || 'Build your custom dork...'}
+
+                {/* Dynamic Operators */}
+                <div className="space-y-2">
+                  {dorkOperators.map((operator, index) => (
+                    <div key={operator.id} className="flex gap-2 items-center animate-slide-up">
+                      <select
+                        value={operator.type}
+                        onChange={(e) => updateOperator(operator.id, 'type', e.target.value)}
+                        className="bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary w-32"
+                      >
+                        <option value="site">site:</option>
+                        <option value="inurl">inurl:</option>
+                        <option value="intext">intext:</option>
+                        <option value="intitle">intitle:</option>
+                        <option value="filetype">filetype:</option>
+                        <option value="ext">ext:</option>
+                        <option value="cache">cache:</option>
+                        <option value="link">link:</option>
+                        <option value="related">related:</option>
+                      </select>
+                      <input
+                        type="text"
+                        value={operator.value}
+                        onChange={(e) => updateOperator(operator.id, 'value', e.target.value)}
+                        placeholder={
+                          operator.type === 'site' ? 'example.com' :
+                          operator.type === 'filetype' || operator.type === 'ext' ? 'pdf' :
+                          operator.type === 'inurl' ? 'admin' :
+                          operator.type === 'intext' || operator.type === 'intitle' ? 'password' :
+                          'value'
+                        }
+                        className="flex-1 bg-background/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      />
+                      <button
+                        onClick={() => removeOperator(operator.id)}
+                        disabled={dorkOperators.length === 1}
+                        className="p-2 glass hover:glass-strong rounded-lg text-muted-foreground hover:text-red-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        title="Remove operator"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Add/Clear Buttons */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={addOperator}
+                    className="glass hover:glass-strong rounded-lg px-3 py-2 text-xs font-medium text-foreground hover:text-primary transition-all flex items-center gap-1"
+                  >
+                    <Plus className="w-3 h-3" />
+                    Add Operator
+                  </button>
+                  <button
+                    onClick={clearAllOperators}
+                    className="glass hover:glass-strong rounded-lg px-3 py-2 text-xs font-medium text-foreground hover:text-red-500 transition-all flex items-center gap-1"
+                  >
+                    <X className="w-3 h-3" />
+                    Clear All
+                  </button>
+                </div>
+
+                {/* Preview and Execute */}
+                <div className="space-y-2">
+                  <label className="text-xs text-muted-foreground">Generated Query:</label>
+                  <div className="bg-background/50 rounded-lg px-3 py-2 text-sm text-primary font-mono overflow-x-auto min-h-[40px] flex items-center">
+                    {buildCustomDork() || <span className="text-muted-foreground">Add operators to build your custom dork...</span>}
                   </div>
                   <button
                     onClick={executeCustomDork}
                     disabled={!buildCustomDork()}
-                    className="glass hover:glass-strong rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full glass hover:glass-strong rounded-lg px-4 py-2.5 text-sm font-medium text-foreground hover:text-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Search
+                    <Search className="w-4 h-4" />
+                    Search Google
                   </button>
                 </div>
               </div>
